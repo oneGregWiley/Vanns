@@ -13,9 +13,8 @@
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- Styles -->
+	<!-- Global styles -->
 	<link href="assets/css/global/style.css" rel="stylesheet">
-	<link href="assets/css/areas/home.css" rel="stylesheet">
 	
 	<!-- All JavaScript at the bottom, except for Modernizr and Respond. -->
 	<script src="assets/js/global/respond.min.js"></script>
@@ -31,50 +30,61 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    
+    <!-- Page specific styles -->
+	<link href="assets/css/areas/home.css" rel="stylesheet">
   </head>
   
   <body class="home">
   	<header>
   		<div class="topbar">
-  			<div class="help"></div>
-  			<div class="utilities"></div>
+  			<div class="container">
+  				<div class="help">HELP</div>
+  				<div class="utilities">UTILITIES</div>
+  			</div>
   		</div>
-  		<div class="header">
-  			<a href="/" class="logo">Vanns.com</a>
-  			<form id="search-vanns">
-  				<input class="search-vanns">
-  				<input class="submit btn">
-  			</form>
-  			
+  		<div class="header container">
+  			<a href="/" class="logo">LOGO</a>
+  			<form id="search">
+		        <input type="text" placeholder="Start Searching">
+		        <button type="submit" class="btn">Submit</button>
+		    </form>
+		    <a href="#" rel="tooltip" data-original-title="Shop Specials">SHOP SPECIALS</a>
+		    <div class="trust-header">TRUST</div>
   		</div>
-  		<nav class="primary"></nav>
+  		<nav class="primary">
+  			<ul id="primary-nav" class="container">MAIN NAV</ul>
+  			<div id="subnav">
+  				<div class="container">SUBNAV</div>
+  			</div>
+  		</nav>
   	</header>
   	
-  	<section class="billboard">
-  		<div class="zone hero"></div>
-  		<div class="trust"></div>
+  	<section class="billboard container">
+  		<div class="zone hero">HERO</div>
+  		<div class="trust">TRUST</div>
   	</section>
   	
-  	<section class="shop shelf">
-  		<div class="dod"></div>
-  		<div class="zone secondary"></div>
-  		<div class="zone secondary"></div>
+  	<section class="shop shelf container">
+  		<div class="dod">DOD</div>
+  		<div class="zone secondary">ZONE</div>
+  		<div class="zone secondary">ZONE</div>
   	</section>
   	
-  	<section class="authorized-brands shelf">
-  		<form id="search-brands"></form>
-  		<div class="featured-brands"></div>
+  	<section class="authorized-brands shelf container">
+  		<form id="search-brands">SEARCH BRANDS</form>
+  		<div class="featured-brands">FEATURED BRANDS</div>
   	</section>
   	
-  	<footer>
+  	<footer class="container">
   		<section class="footer-top">
-  			<nav class="breadcrumb"></nav>
-  			<div class="links"></div>
-  			<div class="social"></div>
+  			<nav class="breadcrumb">BREADCRUMB</nav>
+  			<div class="links">LINKS</div>
+  			<div class="social">SOCIAL</div>
   		</section>
   		<section class="footer-bottom">
-  			<div class="recognition"></div>
-  			<div class="legal"></div>
+  			<div class="recognition">RECOGNITION</div>
+  			<div class="legal">LEGAL</div>
   		</section>
   	</footer>
   
@@ -85,7 +95,7 @@
 	<!-- Libraries -->
 	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
     
-	<!-- Scripts concatenated and minified via Codekit-->
+	<!-- Global scripts concatenated and minified via Codekit-->
 	<script src="assets/js/plugins-min.js"></script>
 
 	<!-- Google Analytics -->
@@ -102,5 +112,17 @@
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
+	
+	<!-- Page specific scripts/options -->
+	<script type="text/javascript">
+		$(function () {
+	        // tooltip demo
+	        $('.header').tooltip({
+	          selector: "a[rel=tooltip]",
+	          placement: "bottom"
+	        })
+	        $('.tooltip-test').tooltip()
+		});
+	</script>
   </body>
 </html>
