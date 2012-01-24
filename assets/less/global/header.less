@@ -1,0 +1,258 @@
+// header.less
+// CSS for the global header.
+// -----------------------------------------------------------------
+
+header {
+	position: relative;
+}
+
+// TOPBAR
+// --------------------------------------------------
+
+.topbar {
+	background-image: url(../../img/topbar-bg.png);
+	color: @topBarColor;
+	text-shadow: 0 1px 0 #000;
+	height: 30px;
+	// Topbar link color
+	a {
+		color: @topBarColor;
+		&:hover {
+			color: @white;
+			text-decoration: none;
+		}
+	}
+	// Sections
+	ul {
+		margin: 0;
+		li {
+			float: left;
+			list-style-type: none;
+			border-left: 1px solid #4a4a4a;
+			border-right: 1px solid #1e1e1e;
+			margin: 0;
+			height: 20px;
+			padding: 6px 12px 4px;
+			&:first-child {
+				padding-left: 0;
+				border-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+				border-right: 0;
+			}
+			a {
+				display: block;
+			}
+		}
+	}
+	// Topbar icons
+	i {
+		width: 20px;
+		height: 20px;
+		background-image: url(../../img/topbar-sprites.png);
+		margin-top: -3px;
+		margin-right: 5px;
+	}
+	// Help area
+	// -------------------------
+	.help {
+		float: left;
+	}
+	// Chat link
+	.chat-link {
+		i {
+			background-position: 0 -464px;
+		}
+		&:hover i {
+			background-position: 0 -394px;
+		}
+	}
+	// Help link
+	.help-link {
+		i {
+			background-position: 0 -604px;
+		}
+		&:hover i {
+			background-position: 0 -534px;
+		}
+	}
+
+	// Utilities area
+	// -------------------------
+	.utilities {
+		float: right;
+	}
+	// Account avatar
+	.acct-avatar img {
+		vertical-align: middle;
+		margin-top: -3px;
+		margin-right: 5px;
+	}
+	// Cart
+	#cart {
+		// Default is empty iteration
+		// Cart icon
+		i {
+			background-position: 0 -127px;
+			margin-top: -5px;
+			margin-right: 10px;
+		}
+		&:hover i {
+			background-position: 0 -57px;
+		}
+		// Cart QTY
+		strong {
+			background-color: #808080;
+			display: inline-block;
+			height: 19px;
+			width: 22px;
+			position: relative;
+			top: -2px;
+			text-align: center;
+			color: @white;
+			text-shadow: none;
+			padding-top: 3px;
+			position: relative;
+			// Cart QTY carat
+			&:before {
+				content: " ";
+				background-image: url(../../img/topbar-sprites.png);
+				background-position: 0 0;
+				width: 5px;
+				height: 7px;
+				position: absolute;
+				left: -5px;
+				top: 7px;
+				display: block;
+			}
+		}
+		// Full cart iterations
+		// Cart icon
+		&.full i {
+			background-position: 0 -324px;
+		}
+		&.full:hover i {
+			background-position: 0 -254px;
+		}
+		// Cart QTY
+		&.full strong {
+			background-color: #e62c22;
+			// Cart QTY carat
+			&:before {
+				background-position: 0 -197px;
+			}
+		} 
+	}	
+}
+
+
+
+// MAIN HEADER STRIP
+// --------------------------------------------------
+
+.header {
+	background: @white;
+	padding: 20px 0 40px;
+	border-bottom: 1px solid #ccc;
+	.box-shadow(0 1px 3px rgba(0,0,0,0.1);
+	// Logo
+	// -------------------------
+	.logo {
+		margin-top: -10px;
+		line-height: 0;
+	}
+	// Search
+	// -------------------------
+	#search {
+		margin-bottom: 0;
+		position: relative;
+		input {
+			height: 25px;
+			font-size: 14px;
+			padding-left: 10px;
+			line-height: 0;
+			margin-bottom: 0;
+			border: 1px solid #b2b2b2;
+			.box-shadow(inset 0 1px 4px rgba(0,0,0,.2));
+			@transition: border linear .2s, box-shadow linear .2s;
+  			.transition(@transition);
+  			&::-webkit-input-placeholder {
+  				color: #b2b2b2;
+  				padding-left: 20px;
+  			}
+		}
+		// Blue border focus transition
+		input:focus {
+			border-color: rgba(80,162,217,.8);
+  			@shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 0 3px rgba(80,162,217,.6);
+  			.box-shadow(@shadow);
+  			outline: 0;
+		}
+		// Style submit button as icon
+		button {
+			text-indent: -9999px;
+			background: url(../../img/header-sprites.png);
+			background-position: 0 -72px;
+			width: 22px;
+			height: 22px;
+			position: absolute;
+			right: 6px;
+			top: 6px;
+			&:hover {
+				background-position: 0 0;
+			}
+		}
+	}
+	// Shop specials
+	// -------------------------
+	.specials-btn {
+		border: 1px solid #ccc;
+		width: 58px;
+		height: 33px;
+		background: #fafafa;
+		text-align: center;
+		.border-radius(3px);
+		i {
+			text-indent: -9999px;
+			background-image: url(../../img/header-sprites.png);
+			background-position: 0 -214px;
+			height: 20px;
+			width: 20px;
+			margin-top: 5px;
+		}
+		&:hover {
+			border: 1px solid #b2b2b2;
+			i {
+				background-position: 0 -144px;
+			}
+		}
+	}
+	// Trust points
+	// -------------------------
+	.trust-header {
+		text-align: center;
+		cursor: default;
+		h3 {
+			background: #808080;
+			color: @white;
+			text-transform: uppercase;
+			font-size: 11px;
+			text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+			.box-shadow(inset 0 1px 1px rgba(0,0,0,.5));
+			.border-radius(3px);
+			line-height: 18px;
+			font-weight: 500;
+		}
+		p {
+			font-size: 12px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// NAVIGATION
+// --------------------------------------------------
+
+// Import the main navigation
+@import "navigation.less";

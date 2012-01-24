@@ -1,0 +1,69 @@
+// navigation.less
+// The primary site navigation.
+// -----------------------------------------------------------------
+
+// MENU BAR
+// --------------------------------------------------
+
+#primary {
+	position: relative;
+	top: -20px;
+	.menubar {
+		border: 1px solid #a6a6a6;
+		.border-radius(3px);
+		#gradient > .vertical(#fefefe, #d2d2d2);
+		list-style: none;
+		height: 38px;
+		.box-shadow(0 2px 3px rgba(0,0,0,0.1);
+		margin-bottom: 0;
+		text-align: center;
+		li {
+			float: left;
+			height: 37px;
+			border-left: 1px solid #a6a6a6;
+			border-bottom: 1px solid #d7d7d7;
+			&:first-child {
+				border-left: 0;
+				margin-left: 3px;
+			}
+			a {
+				color: #595959;
+				font-weight: 500;
+				text-shadow: 0 1px 0 #fff;
+				display: block;
+				text-align: center;
+				height: 18px;
+				padding: 10px 12px;
+				&:hover {
+					text-decoration: none;
+					color: #222;
+				}
+				i {
+					margin-right: 11px;
+					width: 25px;
+					height: 25px;
+					margin-top: -5px;
+					background-image: url(../../img/nav-sprites.png);
+				}
+			}
+		}
+		.tv a i {
+			background-position: 0 -825px;
+		}
+		.audio a i {
+			background-position: 0 -525px;
+		}
+		.portable a i {
+			background-position: 0 -675px;
+		}
+		.computers a i {
+			background-position: 0 -375px;
+		}
+		.cameras a i {
+			background-position: 0 -225px;
+		}
+		.appliances a i {
+			background-position: 0 -75px;
+		}
+	}
+}

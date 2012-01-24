@@ -39,43 +39,73 @@
   	<header>
   		<div class="topbar">
   			<div class="container">
-  				<div class="help">HELP</div>
-  				<div class="utilities">UTILITIES</div>
+  				<div class="help">
+  					<ul>
+  						<li>Call <strong>800-769-5668</strong></li>
+  						<li class="chat-link"><a href="#"><i></i>Need help? <strong>Chat with us</strong></a></li>
+  						<li class="help-link"><a href="#"><i></i>Help</a></li>
+  					</ul>
+  				</div>
+  				<div class="utilities">
+  					<ul>
+  						<li><a href="#">Order Tracking</a></li>
+  						<li id="cart" class="full"><a href="#"><i></i><strong>0</strong></a></li>
+  						<li class="acct-avatar"><a href="#"><img src="assets/img/topbar-acct-avatar.png">John</a></li>
+  					</ul>
+  				</div>
   			</div>
   		</div>
-  		<div class="header container">
-  			<a href="/" class="logo">LOGO</a>
-  			<form id="search">
-		        <input type="text" placeholder="Start Searching">
-		        <button type="submit" class="btn">Submit</button>
-		    </form>
-		    <a href="#" rel="tooltip" data-original-title="Shop Specials">SHOP SPECIALS</a>
-		    <div class="trust-header">TRUST</div>
+  		<div class="header">
+  			<div class="container">
+  				<div class="row">
+	  				<a href="/" class="logo span3">
+		  				<img src="assets/img/header-logo.png" alt="Vanns.com" title="Vanns.com" width="210" height="45">
+		  			</a>
+		  			<form id="search" class="span6">
+		  				<input type="text" class="span6" placeholder="Start Searching">
+				       	<button type="submit">Submit</button>
+				    </form>
+				    <a href="#" class="span1 specials-btn" rel="tooltip" data-original-title="Shop Specials"><i>Shop Specials</i></a>
+				    <div class="trust-header span2">
+				    	<h3>Free Shipping</h3>
+				    	<p>on orders of over $50</p>
+				    </div>
+	  			</div>
+  			</div>
   		</div>
-  		<nav class="primary">
-  			<ul id="primary-nav" class="container">MAIN NAV</ul>
-  			<div id="subnav">
+		<nav id="primary">
+  			<ul class="container menubar">
+  				<li class="tv"><a href="#"><i></i>TV's & Video</a></li>
+  				<li class="audio"><a href="#"><i></i>Home Audio</a></li>
+  				<li class="portable"><a href="#"><i></i>Portable & Headphones</a></li>
+  				<li class="computers"><a href="#"><i></i>Computers</a></li>
+  				<li class="cameras"><a href="#"><i></i>Cameras & Camcorders</a></li>
+  				<li class="appliances"><a href="#"><i></i>Appliances</a></li>
+  			</ul>
+  			<!--<div id="subnav">
   				<div class="container">SUBNAV</div>
-  			</div>
+  			</div>-->
   		</nav>
   	</header>
+  	<div class="page">
   	
-  	<section class="billboard container">
-  		<div class="zone hero">HERO</div>
-  		<div class="trust">TRUST</div>
-  	</section>
-  	
-  	<section class="shop shelf container">
-  		<div class="dod">DOD</div>
-  		<div class="zone secondary">ZONE</div>
-  		<div class="zone secondary">ZONE</div>
-  	</section>
-  	
-  	<section class="authorized-brands shelf container">
-  		<form id="search-brands">SEARCH BRANDS</form>
-  		<div class="featured-brands">FEATURED BRANDS</div>
-  	</section>
-  	
+	  	<section class="billboard container">
+	  		<div class="zone hero">HERO</div>
+	  		<div class="trust">TRUST</div>
+	  	</section>
+	  	
+	  	<section class="shop shelf container">
+	  		<div class="dod">DOD</div>
+	  		<div class="zone secondary">ZONE</div>
+	  		<div class="zone secondary">ZONE</div>
+	  	</section>
+	  	
+	  	<section class="authorized-brands shelf container">
+	  		<form id="search-brands">SEARCH BRANDS</form>
+	  		<div class="featured-brands">FEATURED BRANDS</div>
+	  	</section>
+	  	
+  	</div>
   	<footer class="container">
   		<section class="footer-top">
   			<nav class="breadcrumb">BREADCRUMB</nav>
@@ -93,7 +123,7 @@
 	<!-- ============================================== -->
 	
 	<!-- Libraries -->
-	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     
 	<!-- Global scripts concatenated and minified via Codekit-->
 	<script src="assets/js/plugins-min.js"></script>
