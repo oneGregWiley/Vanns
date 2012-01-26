@@ -26,6 +26,9 @@
 				border-left: 0;
 				margin-left: 3px;
 			}
+			&:hover {
+				#gradient > .vertical(#fafafa, #cfcfcf);
+			}
 			a {
 				color: #595959;
 				font-weight: 500;
@@ -36,7 +39,7 @@
 				padding: 10px 12px;
 				&:hover {
 					text-decoration: none;
-					color: #222;
+					color: #262626;
 				}
 				i {
 					margin-right: 11px;
@@ -47,23 +50,30 @@
 				}
 			}
 		}
-		.tv a i {
-			background-position: 0 -825px;
+		// Nav sprites
+		.tv a {
+			i {background-position: 0 -825px;}
+			&:hover i {background-position: 0 -750px;}
 		}
-		.audio a i {
-			background-position: 0 -525px;
+		.audio a {
+			i {background-position: 0 -525px;}
+			&:hover i {background-position: 0 -450px;}
 		}
-		.portable a i {
-			background-position: 0 -675px;
+		.portable a {
+			i {	background-position: 0 -675px;}
+			&:hover i {background-position: 0 -600px;}
 		}
-		.computers a i {
-			background-position: 0 -375px;
+		.computers a {
+			i {	background-position: 0 -375px;}
+			&:hover i {background-position: 0 -300px;}
 		}
-		.cameras a i {
-			background-position: 0 -225px;
+		.cameras a {
+			i {background-position: 0 -225px;}
+			&:hover i {background-position: 0 -150px;}
 		}
-		.appliances a i {
-			background-position: 0 -75px;
+		.appliances a {
+			i {background-position: 0 -75px;}
+			&:hover i {background-position: 0 0;}
 		}
 	}
 }

@@ -43,14 +43,34 @@
   					<ul>
   						<li>Call <strong>800-769-5668</strong></li>
   						<li class="chat-link"><a href="#"><i></i>Need help? <strong>Chat with us</strong></a></li>
-  						<li class="help-link"><a href="#"><i></i>Help</a></li>
+  						<li class="help-link dropdown" id="menu-help">
+						    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu-help">
+						      <i></i>Help
+						    </a>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">Payment Methods</a></li>
+						      <li><a href="#">Return Policy</a></li>
+						      <li><a href="#">Shipping Info</a></li>
+						      <li class="divider"></li>
+						      <li><a href="#">Contact us</a></li>
+						    </ul>
+						</li>
   					</ul>
   				</div>
-  				<div class="utilities">
+  				<div class="utilities pull-right">
   					<ul>
   						<li><a href="#">Order Tracking</a></li>
-  						<li id="cart" class="full"><a href="#"><i></i><strong>0</strong></a></li>
-  						<li class="acct-avatar"><a href="#"><img src="assets/img/topbar-acct-avatar.png">John</a></li>
+  						<li id="cart" class="full"><a href="#"><i></i><strong>2</strong></a></li>
+  						<li class="acct-avatar dropdown" id="menu-acct">
+  							<a class="dropdown-toggle" data-toggle="dropdown" href="#menu-acct"><img src="assets/img/topbar-acct-avatar.png">John</a>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">Account settings</a></li>
+						      <li><a href="#">Returns</a></li>
+						      <li><a href="#">Your orders</a></li>
+						      <li class="divider"></li>
+						      <li><a href="#">Sign out</a></li>
+						    </ul>
+  						</li>
   					</ul>
   				</div>
   			</div>
@@ -90,17 +110,41 @@
   	<div class="page">
   	
 	  	<section class="billboard container">
-	  		<div class="zone hero">HERO</div>
-	  		<div class="trust">TRUST</div>
+	  		<div class="row">
+	  			<div class="span12 zone shadow hero">
+	  				<!-- Begin Zone Content -->
+	  				<div style="text-align:center;">
+	  					<img style="margin:30px auto 20px;" src="assets/img/home/hero_title.jpg" alt="The New Macbook Pro." title="The New Macbook Pro.">
+	  					<img style="margin-bottom:35px;" class="rounded" src="assets/img/home/hero_sub.png" alt="The New Macbook Pro." title="The New Macbook Pro.">
+	  					<img style="position:relative;left:-39px;" class="rounded" src="assets/img/home/hero_img.png" alt="The New Macbook Pro." title="The New Macbook Pro.">
+	  				</div>
+	  				<!-- End Zone Content -->
+	  			</div>
+	  		</div>
+	  		<div class="row">
+	  			<div class="span12 zone shadow trust">
+	  				<h3>Hooray!</h3>
+	  				<ul>
+	  					<li>Free Shipping</li>
+	  					<li>No Sales Tax!*</li>
+	  					<li>Authorized Dealer</li>
+	  					<li>Fast Service</li>
+	  					<li>50 Year Legacy</li>
+	  				</ul>
+	  			</div>
+	  		</div>
+	  		
 	  	</section>
 	  	
 	  	<section class="shop shelf container">
+	  		<h5><span>Shop</span></h5>
 	  		<div class="dod">DOD</div>
-	  		<div class="zone secondary">ZONE</div>
-	  		<div class="zone secondary">ZONE</div>
+	  		<div class="zone inset secondary">ZONE</div>
+	  		<div class="zone shadow secondary">ZONE</div>
 	  	</section>
 	  	
 	  	<section class="authorized-brands shelf container">
+	  		<h5><span>Authorized Brands</span></h5>
 	  		<form id="search-brands">SEARCH BRANDS</form>
 	  		<div class="featured-brands">FEATURED BRANDS</div>
 	  	</section>

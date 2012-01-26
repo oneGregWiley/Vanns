@@ -1,16 +1,65 @@
-/* =====Media Queries ===== */
-@media only screen and (max-width: 320px) {
+// home.less
+// CSS for the homepage.
+// -----------------------------------------------------------------
 
-}
-@media only screen and (max-width: 480px) {
 
-}
-@media only screen and (max-width: 768px) {
+// Include LESS variables & mixins
+@import "../global/lib/mixins.less";
+@import "../global/lib/variables.less";
 
-}
-@media only screen and (max-width: 1024px) {
+// BILLBOARD
+// --------------------------------------------------
 
+// Hero
+.home .hero {
+	margin-bottom: 30px;
 }
+
+// Trust points
+.trust {
+	font-family: 'Clarendon';
+	text-transform: uppercase;
+	height: 35px;
+	// Black title
+	h3 {
+		font-weight: normal;
+		font-size: 16px;
+		color: @white;
+		background-image: url(../../img/home/trust-gradient.png);
+		float: left;
+		height: 35px;
+		line-height: 35px;
+		position: relative;
+		padding: 0 18px 0 20px;	
+		.border-radius-custom(3px, 0, 0, 3px);
+		&:after {
+			content: url(../../img/home/trust-carat.png);
+			position: absolute;
+			right: -11px;
+		}
+	}
+	// List of benefits
+	ul {
+		color: #666;
+		float: left;
+		height: 34px;
+		line-height: 35px;
+		margin-left: 40px;
+		margin-bottom: 0;
+		padding-top: 1px;
+		li {
+			display:inline;
+			margin-right: 35px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+
+
+
 @media only screen and (max-width: 1340px) {
     .widget {
     	display: none;

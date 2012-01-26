@@ -101,3 +101,51 @@
   margin-top: 2px; // give it some space to breathe
   .border-radius(4px);
 }
+
+// Header Topbar
+.topbar .dropdown.open {
+	.dropdown-toggle {
+    color: @white;
+    background: none;
+  }
+}
+
+// Menu position and menu carets
+.topbar .dropdown-menu {
+  top: 31px;
+  .border-radius(4px);
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left:   7px solid transparent;
+    border-right:  7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0,0,0,.2);
+    position: absolute;
+    top: -7px;
+    left: 9px;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left:   6px solid transparent;
+    border-right:  6px solid transparent;
+    border-bottom: 6px solid #fff;
+    position: absolute;
+    top: -6px;
+    left: 10px;
+  }
+}
+
+// Right aligned menus need alt position
+.topbar .pull-right .dropdown-menu {
+  right: 0;
+  &:before {
+    left: auto;
+    right: 12px;
+  }
+  &:after {
+    left: auto;
+    right: 13px;
+  }
+}

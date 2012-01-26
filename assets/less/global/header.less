@@ -12,20 +12,20 @@ header {
 .topbar {
 	background-image: url(../../img/topbar-bg.png);
 	color: @topBarColor;
-	text-shadow: 0 1px 0 #000;
 	height: 30px;
 	// Topbar link color
-	a {
+	div > ul > li > a {
 		color: @topBarColor;
+		text-shadow: 0 1px 0 #000;
 		&:hover {
 			color: @white;
 			text-decoration: none;
 		}
 	}
 	// Sections
-	ul {
+	div > ul {
 		margin: 0;
-		li {
+		> li {
 			float: left;
 			list-style-type: none;
 			border-left: 1px solid #4a4a4a;
@@ -61,28 +61,18 @@ header {
 	}
 	// Chat link
 	.chat-link {
-		i {
-			background-position: 0 -464px;
-		}
-		&:hover i {
-			background-position: 0 -394px;
-		}
+		i {background-position: 0 -464px;}
+		&:hover i {background-position: 0 -394px;}
 	}
 	// Help link
 	.help-link {
-		i {
-			background-position: 0 -604px;
-		}
-		&:hover i {
-			background-position: 0 -534px;
-		}
+		i {background-position: 0 -604px;}
+		&:hover i {	background-position: 0 -534px;}
 	}
 
 	// Utilities area
 	// -------------------------
-	.utilities {
-		float: right;
-	}
+	
 	// Account avatar
 	.acct-avatar img {
 		vertical-align: middle;
