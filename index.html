@@ -98,9 +98,19 @@
 				    <!-- SPECIALS BTN -->
 				    <a href="#" class="span1 specials-btn" rel="tooltip" data-original-title="Shop Specials"><i>Shop Specials</i></a>
 				    <!-- TRUST POINTS -->
-				    <div class="trust-header span2">
-				    	<h3>Free Shipping</h3>
-				    	<p>on orders of over $50</p>
+				    <div id="trust-header" class="span2">
+				    	<div>
+				    		<h3>Free Shipping</h3>
+				    		<p>on orders of over $50</p>
+				    	</div>
+				    	<div>
+				    		<h3>No Sales Tax</h3>
+				    		<p>*except in Kentucky</p>
+				    	</div>
+				    	<div>
+				    		<h3>Authorized</h3>
+				    		<p>authorized online dealer</p>
+				    	</div>
 				    </div>
 	  			</div>
   			</div>
@@ -356,13 +366,22 @@
 	
 	<!-- Page specific scripts/options -->
 	<script type="text/javascript">
-		$(function () {
-	        // tooltip demo
+	$(document).ready(
+		function(){
+			// tooltip demo
 	        $('.header').tooltip({
 	          selector: "a[rel=tooltip]",
 	          placement: "bottom"
 	        })
-		});
-	</script>
+			$('#trust-header').innerfade({
+				animationtype: 'slide',
+				speed: 1,
+				timeout: 10000,
+				type: 'sequence',
+				containerheight: '36px'
+			});
+		}
+	);
+</script>
   </body>
 </html>

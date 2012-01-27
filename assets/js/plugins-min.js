@@ -1,15 +1,427 @@
-//@codekit-append "/plugins/bootstrap/bootstrap-transition.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-alert.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-modal.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-dropdown.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-scrollspy.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-tab.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-tooltip.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-popover.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-button.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-collapse.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-carousel.js";
-//@codekit-append "/plugins/bootstrap/bootstrap-typeahead.js";
+//@codekit-append "/jquery.innerfade.js";
+
+//@codekit-append "/bootstrap/bootstrap-tooltip.js";
+//@codekit-append "/bootstrap/bootstrap-transition.js";
+//@codekit-append "/bootstrap/bootstrap-alert.js";
+//@codekit-append "/bootstrap/bootstrap-modal.js";
+//@codekit-append "/bootstrap/bootstrap-dropdown.js";
+//@codekit-append "/bootstrap/bootstrap-scrollspy.js";
+//@codekit-append "/bootstrap/bootstrap-tab.js";
+//@codekit-append "/bootstrap/bootstrap-popover.js";
+//@codekit-append "/bootstrap/bootstrap-button.js";
+//@codekit-append "/bootstrap/bootstrap-collapse.js";
+//@codekit-append "/bootstrap/bootstrap-carousel.js";
+//@codekit-append "/bootstrap/bootstrap-typeahead.js";
+
+/*********************************************** 
+     Begin jquery.innerfade.js 
+***********************************************/ 
+
+/* =========================================================
+
+// jquery.innerfade.js
+
+// Datum: 2008-02-14
+// Firma: Medienfreunde Hofmann & Baldes GbR
+// Author: Torsten Baldes
+// Mail: t.baldes@medienfreunde.com
+// Web: http://medienfreunde.com
+
+// based on the work of Matt Oakes http://portfolio.gizone.co.uk/applications/slideshow/
+// and Ralf S. Engelschall http://trainofthoughts.org/
+
+ *
+ *  <ul id="news"> 
+ *      <li>content 1</li>
+ *      <li>content 2</li>
+ *      <li>content 3</li>
+ *  </ul>
+ *  
+ *  $('#news').innerfade({ 
+ *	  animationtype: Type of animation 'fade' or 'slide' (Default: 'fade'), 
+ *	  speed: Fading-/Sliding-Speed in milliseconds or keywords (slow, normal or fast) (Default: 'normal'), 
+ *	  timeout: Time between the fades in milliseconds (Default: '2000'), 
+ *	  type: Type of slideshow: 'sequence', 'random' or 'random_start' (Default: 'sequence'), 
+ * 		containerheight: Height of the containing element in any css-height-value (Default: 'auto'),
+ *	  runningclass: CSS-Class which the container get’s applied (Default: 'innerfade'),
+ *	  children: optional children selector (Default: null)
+ *  }); 
+ *
+
+// ========================================================= */
+
+
+(function($) {
+
+    $.fn.innerfade = function(options) {
+        return this.each(function() {   
+            $.innerfade(this, options);
+        });
+    };
+
+    $.innerfade = function(container, options) {
+        var settings = {
+        		'animationtype':    'fade',
+            'speed':            'normal',
+            'type':             'sequence',
+            'timeout':          2000,
+            'containerheight':  'auto',
+            'runningclass':     'innerfade',
+            'children':         null
+        };
+        if (options)
+            $.extend(settings, options);
+        if (settings.children === null)
+            var elements = $(container).children();
+        else
+            var elements = $(container).children(settings.children);
+        if (elements.length > 1) {
+            $(container).css('position', 'relative').css('height', settings.containerheight).addClass(settings.runningclass);
+            for (var i = 0; i < elements.length; i++) {
+                $(elements[i]).css('z-index', String(elements.length-i)).css('position', 'absolute').hide();
+            };
+            if (settings.type == "sequence") {
+                setTimeout(function() {
+                    $.innerfade.next(elements, settings, 1, 0);
+                }, settings.timeout);
+                $(elements[0]).show();
+            } else if (settings.type == "random") {
+            		var last = Math.floor ( Math.random () * ( elements.length ) );
+                setTimeout(function() {
+                    do { 
+												current = Math.floor ( Math.random ( ) * ( elements.length ) );
+										} while (last == current );             
+										$.innerfade.next(elements, settings, current, last);
+                }, settings.timeout);
+                $(elements[last]).show();
+						} else if ( settings.type == 'random_start' ) {
+								settings.type = 'sequence';
+								var current = Math.floor ( Math.random () * ( elements.length ) );
+								setTimeout(function(){
+									$.innerfade.next(elements, settings, (current + 1) %  elements.length, current);
+								}, settings.timeout);
+								$(elements[current]).show();
+						}	else {
+							alert('Innerfade-Type must either be \'sequence\', \'random\' or \'random_start\'');
+						}
+				}
+    };
+
+    $.innerfade.next = function(elements, settings, current, last) {
+        if (settings.animationtype == 'slide') {
+            $(elements[last]).slideUp(settings.speed);
+            $(elements[current]).slideDown(settings.speed);
+        } else if (settings.animationtype == 'fade') {
+            $(elements[last]).fadeOut(settings.speed);
+            $(elements[current]).fadeIn(settings.speed, function() {
+							removeFilter($(this)[0]);
+						});
+        } else
+            alert('Innerfade-animationtype must either be \'slide\' or \'fade\'');
+        if (settings.type == "sequence") {
+            if ((current + 1) < elements.length) {
+                current = current + 1;
+                last = current - 1;
+            } else {
+                current = 0;
+                last = elements.length - 1;
+            }
+        } else if (settings.type == "random") {
+            last = current;
+            while (current == last)
+                current = Math.floor(Math.random() * elements.length);
+        } else
+            alert('Innerfade-Type must either be \'sequence\', \'random\' or \'random_start\'');
+        setTimeout((function() {
+            $.innerfade.next(elements, settings, current, last);
+        }), settings.timeout);
+    };
+
+})(jQuery);
+
+// **** remove Opacity-Filter in ie ****
+function removeFilter(element) {
+	if(element.style.removeAttribute){
+		element.style.removeAttribute('filter');
+	}
+}
+
+
+/*********************************************** 
+     Begin bootstrap-tooltip.js 
+***********************************************/ 
+
+/* ===========================================================
+ * bootstrap-tooltip.js v2.0.0
+ * http://twitter.github.com/bootstrap/javascript.html#tooltip
+ * Inspired by the original jQuery.tipsy by Jason Frame
+ * ===========================================================
+ * Copyright 2012 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================== */
+
+!function( $ ) {
+
+  "use strict"
+
+ /* TOOLTIP PUBLIC CLASS DEFINITION
+  * =============================== */
+
+  var Tooltip = function ( element, options ) {
+    this.init('tooltip', element, options)
+  }
+
+  Tooltip.prototype = {
+
+    constructor: Tooltip
+
+  , init: function ( type, element, options ) {
+      var eventIn
+        , eventOut
+
+      this.type = type
+      this.$element = $(element)
+      this.options = this.getOptions(options)
+      this.enabled = true
+
+      if (this.options.trigger != 'manual') {
+        eventIn  = this.options.trigger == 'hover' ? 'mouseenter' : 'focus'
+        eventOut = this.options.trigger == 'hover' ? 'mouseleave' : 'blur'
+        this.$element.on(eventIn, this.options.selector, $.proxy(this.enter, this))
+        this.$element.on(eventOut, this.options.selector, $.proxy(this.leave, this))
+      }
+
+      this.options.selector ?
+        (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
+        this.fixTitle()
+    }
+
+  , getOptions: function ( options ) {
+      options = $.extend({}, $.fn[this.type].defaults, options, this.$element.data())
+
+      if (options.delay && typeof options.delay == 'number') {
+        options.delay = {
+          show: options.delay
+        , hide: options.delay
+        }
+      }
+
+      return options
+    }
+
+  , enter: function ( e ) {
+      var self = $(e.currentTarget)[this.type](this._options).data(this.type)
+
+      if (!self.options.delay || !self.options.delay.show) {
+        self.show()
+      } else {
+        self.hoverState = 'in'
+        setTimeout(function() {
+          if (self.hoverState == 'in') {
+            self.show()
+          }
+        }, self.options.delay.show)
+      }
+    }
+
+  , leave: function ( e ) {
+      var self = $(e.currentTarget)[this.type](this._options).data(this.type)
+
+      if (!self.options.delay || !self.options.delay.hide) {
+        self.hide()
+      } else {
+        self.hoverState = 'out'
+        setTimeout(function() {
+          if (self.hoverState == 'out') {
+            self.hide()
+          }
+        }, self.options.delay.hide)
+      }
+    }
+
+  , show: function () {
+      var $tip
+        , inside
+        , pos
+        , actualWidth
+        , actualHeight
+        , placement
+        , tp
+
+      if (this.hasContent() && this.enabled) {
+        $tip = this.tip()
+        this.setContent()
+
+        if (this.options.animation) {
+          $tip.addClass('fade')
+        }
+
+        placement = typeof this.options.placement == 'function' ?
+          this.options.placement.call(this, $tip[0], this.$element[0]) :
+          this.options.placement
+
+        inside = /in/.test(placement)
+
+        $tip
+          .remove()
+          .css({ top: 0, left: 0, display: 'block' })
+          .appendTo(inside ? this.$element : document.body)
+
+        pos = this.getPosition(inside)
+
+        actualWidth = $tip[0].offsetWidth
+        actualHeight = $tip[0].offsetHeight
+
+        switch (inside ? placement.split(' ')[1] : placement) {
+          case 'bottom':
+            tp = {top: pos.top + pos.height, left: pos.left + pos.width / 2 - actualWidth / 2}
+            break
+          case 'top':
+            tp = {top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2}
+            break
+          case 'left':
+            tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth}
+            break
+          case 'right':
+            tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width}
+            break
+        }
+
+        $tip
+          .css(tp)
+          .addClass(placement)
+          .addClass('in')
+      }
+    }
+
+  , setContent: function () {
+      var $tip = this.tip()
+      $tip.find('.tooltip-inner').html(this.getTitle())
+      $tip.removeClass('fade in top bottom left right')
+    }
+
+  , hide: function () {
+      var that = this
+        , $tip = this.tip()
+
+      $tip.removeClass('in')
+
+      function removeWithAnimation() {
+        var timeout = setTimeout(function () {
+          $tip.off($.support.transition.end).remove()
+        }, 500)
+
+        $tip.one($.support.transition.end, function () {
+          clearTimeout(timeout)
+          $tip.remove()
+        })
+      }
+
+      $.support.transition && this.$tip.hasClass('fade') ?
+        removeWithAnimation() :
+        $tip.remove()
+    }
+
+  , fixTitle: function () {
+      var $e = this.$element
+      if ($e.attr('title') || typeof($e.attr('data-original-title')) != 'string') {
+        $e.attr('data-original-title', $e.attr('title') || '').removeAttr('title')
+      }
+    }
+
+  , hasContent: function () {
+      return this.getTitle()
+    }
+
+  , getPosition: function (inside) {
+      return $.extend({}, (inside ? {top: 0, left: 0} : this.$element.offset()), {
+        width: this.$element[0].offsetWidth
+      , height: this.$element[0].offsetHeight
+      })
+    }
+
+  , getTitle: function () {
+      var title
+        , $e = this.$element
+        , o = this.options
+
+      title = $e.attr('data-original-title')
+        || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
+
+      title = title.toString().replace(/(^\s*|\s*$)/, "")
+
+      return title
+    }
+
+  , tip: function () {
+      return this.$tip = this.$tip || $(this.options.template)
+    }
+
+  , validate: function () {
+      if (!this.$element[0].parentNode) {
+        this.hide()
+        this.$element = null
+        this.options = null
+      }
+    }
+
+  , enable: function () {
+      this.enabled = true
+    }
+
+  , disable: function () {
+      this.enabled = false
+    }
+
+  , toggleEnabled: function () {
+      this.enabled = !this.enabled
+    }
+
+  , toggle: function () {
+      this[this.tip().hasClass('in') ? 'hide' : 'show']()
+    }
+
+  }
+
+
+ /* TOOLTIP PLUGIN DEFINITION
+  * ========================= */
+
+  $.fn.tooltip = function ( option ) {
+    return this.each(function () {
+      var $this = $(this)
+        , data = $this.data('tooltip')
+        , options = typeof option == 'object' && option
+      if (!data) $this.data('tooltip', (data = new Tooltip(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  $.fn.tooltip.Constructor = Tooltip
+
+  $.fn.tooltip.defaults = {
+    animation: true
+  , delay: 0
+  , selector: false
+  , placement: 'top'
+  , trigger: 'hover'
+  , title: ''
+  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+  }
+
+}( window.jQuery )
+
 
 /*********************************************** 
      Begin bootstrap-transition.js 
@@ -704,282 +1116,6 @@
   })
 
 }( window.jQuery )
-
-/*********************************************** 
-     Begin bootstrap-tooltip.js 
-***********************************************/ 
-
-/* ===========================================================
- * bootstrap-tooltip.js v2.0.0
- * http://twitter.github.com/bootstrap/javascript.html#tooltip
- * Inspired by the original jQuery.tipsy by Jason Frame
- * ===========================================================
- * Copyright 2012 Twitter, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================== */
-
-!function( $ ) {
-
-  "use strict"
-
- /* TOOLTIP PUBLIC CLASS DEFINITION
-  * =============================== */
-
-  var Tooltip = function ( element, options ) {
-    this.init('tooltip', element, options)
-  }
-
-  Tooltip.prototype = {
-
-    constructor: Tooltip
-
-  , init: function ( type, element, options ) {
-      var eventIn
-        , eventOut
-
-      this.type = type
-      this.$element = $(element)
-      this.options = this.getOptions(options)
-      this.enabled = true
-
-      if (this.options.trigger != 'manual') {
-        eventIn  = this.options.trigger == 'hover' ? 'mouseenter' : 'focus'
-        eventOut = this.options.trigger == 'hover' ? 'mouseleave' : 'blur'
-        this.$element.on(eventIn, this.options.selector, $.proxy(this.enter, this))
-        this.$element.on(eventOut, this.options.selector, $.proxy(this.leave, this))
-      }
-
-      this.options.selector ?
-        (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
-        this.fixTitle()
-    }
-
-  , getOptions: function ( options ) {
-      options = $.extend({}, $.fn[this.type].defaults, options, this.$element.data())
-
-      if (options.delay && typeof options.delay == 'number') {
-        options.delay = {
-          show: options.delay
-        , hide: options.delay
-        }
-      }
-
-      return options
-    }
-
-  , enter: function ( e ) {
-      var self = $(e.currentTarget)[this.type](this._options).data(this.type)
-
-      if (!self.options.delay || !self.options.delay.show) {
-        self.show()
-      } else {
-        self.hoverState = 'in'
-        setTimeout(function() {
-          if (self.hoverState == 'in') {
-            self.show()
-          }
-        }, self.options.delay.show)
-      }
-    }
-
-  , leave: function ( e ) {
-      var self = $(e.currentTarget)[this.type](this._options).data(this.type)
-
-      if (!self.options.delay || !self.options.delay.hide) {
-        self.hide()
-      } else {
-        self.hoverState = 'out'
-        setTimeout(function() {
-          if (self.hoverState == 'out') {
-            self.hide()
-          }
-        }, self.options.delay.hide)
-      }
-    }
-
-  , show: function () {
-      var $tip
-        , inside
-        , pos
-        , actualWidth
-        , actualHeight
-        , placement
-        , tp
-
-      if (this.hasContent() && this.enabled) {
-        $tip = this.tip()
-        this.setContent()
-
-        if (this.options.animation) {
-          $tip.addClass('fade')
-        }
-
-        placement = typeof this.options.placement == 'function' ?
-          this.options.placement.call(this, $tip[0], this.$element[0]) :
-          this.options.placement
-
-        inside = /in/.test(placement)
-
-        $tip
-          .remove()
-          .css({ top: 0, left: 0, display: 'block' })
-          .appendTo(inside ? this.$element : document.body)
-
-        pos = this.getPosition(inside)
-
-        actualWidth = $tip[0].offsetWidth
-        actualHeight = $tip[0].offsetHeight
-
-        switch (inside ? placement.split(' ')[1] : placement) {
-          case 'bottom':
-            tp = {top: pos.top + pos.height, left: pos.left + pos.width / 2 - actualWidth / 2}
-            break
-          case 'top':
-            tp = {top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2}
-            break
-          case 'left':
-            tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth}
-            break
-          case 'right':
-            tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width}
-            break
-        }
-
-        $tip
-          .css(tp)
-          .addClass(placement)
-          .addClass('in')
-      }
-    }
-
-  , setContent: function () {
-      var $tip = this.tip()
-      $tip.find('.tooltip-inner').html(this.getTitle())
-      $tip.removeClass('fade in top bottom left right')
-    }
-
-  , hide: function () {
-      var that = this
-        , $tip = this.tip()
-
-      $tip.removeClass('in')
-
-      function removeWithAnimation() {
-        var timeout = setTimeout(function () {
-          $tip.off($.support.transition.end).remove()
-        }, 500)
-
-        $tip.one($.support.transition.end, function () {
-          clearTimeout(timeout)
-          $tip.remove()
-        })
-      }
-
-      $.support.transition && this.$tip.hasClass('fade') ?
-        removeWithAnimation() :
-        $tip.remove()
-    }
-
-  , fixTitle: function () {
-      var $e = this.$element
-      if ($e.attr('title') || typeof($e.attr('data-original-title')) != 'string') {
-        $e.attr('data-original-title', $e.attr('title') || '').removeAttr('title')
-      }
-    }
-
-  , hasContent: function () {
-      return this.getTitle()
-    }
-
-  , getPosition: function (inside) {
-      return $.extend({}, (inside ? {top: 0, left: 0} : this.$element.offset()), {
-        width: this.$element[0].offsetWidth
-      , height: this.$element[0].offsetHeight
-      })
-    }
-
-  , getTitle: function () {
-      var title
-        , $e = this.$element
-        , o = this.options
-
-      title = $e.attr('data-original-title')
-        || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
-
-      title = title.toString().replace(/(^\s*|\s*$)/, "")
-
-      return title
-    }
-
-  , tip: function () {
-      return this.$tip = this.$tip || $(this.options.template)
-    }
-
-  , validate: function () {
-      if (!this.$element[0].parentNode) {
-        this.hide()
-        this.$element = null
-        this.options = null
-      }
-    }
-
-  , enable: function () {
-      this.enabled = true
-    }
-
-  , disable: function () {
-      this.enabled = false
-    }
-
-  , toggleEnabled: function () {
-      this.enabled = !this.enabled
-    }
-
-  , toggle: function () {
-      this[this.tip().hasClass('in') ? 'hide' : 'show']()
-    }
-
-  }
-
-
- /* TOOLTIP PLUGIN DEFINITION
-  * ========================= */
-
-  $.fn.tooltip = function ( option ) {
-    return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('tooltip')
-        , options = typeof option == 'object' && option
-      if (!data) $this.data('tooltip', (data = new Tooltip(this, options)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
-
-  $.fn.tooltip.Constructor = Tooltip
-
-  $.fn.tooltip.defaults = {
-    animation: true
-  , delay: 0
-  , selector: false
-  , placement: 'top'
-  , trigger: 'hover'
-  , title: ''
-  , template: '<div class="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-  }
-
-}( window.jQuery )
-
 
 /*********************************************** 
      Begin bootstrap-popover.js 
