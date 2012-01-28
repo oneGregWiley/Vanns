@@ -37,9 +37,9 @@
   
   <body class="home">
   
-  	<!-- ======================= -->
-  	<!-- ======  HEADER  ======= -->
-  	<!-- ======================= -->
+  	<!-- =================================== -->
+  	<!-- ======  HEADER **include**  ======= -->
+  	<!-- =================================== -->
   	<header>
   		<!-- ======  TOPBAR  ====== -->
   		<div class="topbar">
@@ -115,7 +115,7 @@
 	  			</div>
   			</div>
   		</div>
-  		<!-- ======  PRIMARY NAVIGATION  ====== -->
+  		<!-- ======  PRIMARY NAVIGATION (**Include**)  ====== -->
 		<nav id="primary">
 			<!-- MENU BAR -->
   			<ul class="container menubar">
@@ -150,9 +150,9 @@
 	  				<!-- Begin Zone Content -->
 	  				<div style="text-align:center;">
 	  					<a href="#" style="display:block;">
-	  						<img style="margin:30px auto 20px;" src="assets/img/home/hero_title.jpg" alt="The New Macbook Pro." title="The New Macbook Pro.">
-	  						<img style="margin-bottom:35px;" class="rounded" src="assets/img/home/hero_sub.png" alt="The New Macbook Pro." title="The New Macbook Pro.">
-	  						<img style="position:relative;left:-39px;" class="rounded" src="assets/img/home/hero_img.png" alt="The New Macbook Pro." title="The New Macbook Pro.">
+	  						<img style="margin:30px auto 20px;" src="assets/img/home/hero_title.jpg" alt="The New Macbook Pro.">
+	  						<img style="margin-bottom:35px;" class="rounded" src="assets/img/home/hero_sub.png" alt="The New Macbook Pro.">
+	  						<img style="position:relative;left:-39px;" class="rounded" src="assets/img/home/hero_img.png" alt="The New Macbook Pro.">
 	  					</a>
 	  				</div>
 	  				<!-- End Zone Content -->
@@ -174,22 +174,49 @@
 	  	</section>
 	  	<!-- SHOP SECTION -->
 	  	<section class="shop shelf container">
-	  		<h5><span>Shop</span></h5>
+	  		<h5 class="section-title"><span>Shop</span></h5>
 	  		<div class="row">
 	  			<!-- DEAL OF THE DAY -->
-	  			<div class="dod shadow span6">DOD</div>
+	  			<div class="dod shadow span6">
+	  				<h3>DEAL OF THE DAY<span><em>A deal a day while supplies last!</em></span></h3>
+	  				<div class="dod-item">
+	  					<a href="#"><img src="assets/img/home/dod-item.jpg" alt="Deal of the Day"></a>
+  						<h5><a href="#">Beats by Dr Dre Studio Headphones</a></h5>
+  						<span>Monster Cable</span>
+  						<p>Get studio-quality sound that's just for you with the Beats by Dr. Dre headphones from Monster …</p>
+	  				</div>
+	  				<div class="stats-container">
+	  					<ul class="stats">
+	  						<li>
+	  							<strong>58</strong>
+	  							qty remaining
+	  						</li>
+	  						<li>
+	  							<strong>08:34:17</strong>
+	  							time remaining
+	  						</li>
+	  						<li>
+	  							<div class="pull-left">
+	  								<strong>20% off</strong>
+	  							was <strike>$340</strike>
+	  							</div>
+	  							<a href="#" class="btn primary">$299</a>
+	  						</li>
+	  					</ul>
+	  				</div>
+	  			</div>
 	  			<!-- SECONDARY ZONES -->
 	  			<div class="zone secondary span3">
 	  				<!-- Begin Zone Content -->
 	  				<a href="#">
-	  					<img src="assets/img/home/zone-secondary-upgradePath.jpg" alt="Upgrade path" title="Upgrade Path">
+	  					<img src="assets/img/home/zone-secondary-upgradePath.jpg" alt="Upgrade path">
 	  				</a>
 	  				<!-- End Zone Content -->
 	  			</div>
 	  			<div class="zone shadow secondary span3">
 	  				<!-- Begin Zone Content -->
 	  				<a href="#">
-	  					<img class="rounded" src="assets/img/home/zone-secondary-klipsch.jpg" alt="Klipsch Reference II" title="Klipsch Reference II">
+	  					<img class="rounded" src="assets/img/home/zone-secondary-klipsch.jpg" alt="Klipsch Reference II">
 	  				</a>
 	  				<!-- End Zone Content -->
 	  			</div>
@@ -197,7 +224,7 @@
 	  	</section>
 	  	<!-- BRANDS SECTION -->
 	  	<section class="authorized-brands shelf container">
-	  		<h5><span>Authorized Brands</span><span class="pull-right"><a href="#">View all brands</a></span></h5>
+	  		<h5 class="section-title"><span>Authorized Brands</span><span class="pull-right"><a href="#">View all brands</a></span></h5>
 	  		<div class="row">
 	  			<!-- SEARCH BRANDS -->
 	  			<form id="search-brands" class="span4">
@@ -206,14 +233,37 @@
 			    </form>
 	  			<!-- FEATURED BRANDS -->
 	  			<div class="featured-brands span8">
-	  				FEATURED BRANDS
+	  				<!-- root element for scrollable -->
+					<div id="brand-scroller">   
+					   <!-- root element for the items -->
+					   <div class="items">
+					      <!-- 1-6 -->
+					      <div>
+					         <a href="#" class="yamaha" title="Yamaha">Yamaha</a>
+					         <a href="#" class="mcintosh" title="McIntosh">McIntosh</a>
+					         <a href="#" class="nintendo" title="Nintendo">Nintendo</a>
+					         <a href="#" class="apple" title="Apple">Apple</a>
+					         <a href="#" class="lg" title="LG">LG Electronics</a>
+					         <a href="#" class="panasonic" title="Panasonic">Panasonic</a>
+					      </div>
+					      <!-- 7-12 -->
+					      <div>
+					         <a href="#" class="samsung" title="Samsung">Samsung</a>
+					         <a href="#" class="onkyo" title="Onkyo">Onkyo</a>
+					         <a href="#" class="maytag" title="Maytag">Maytag</a>
+					         <a href="#" class="denon" title="Denon">Denon</a>
+					         <a href="#" class="klipsch" title="Klipsch">Klipsch</a>
+					         <a href="#" class="sony" title="Sony">Sony</a>
+					      </div>
+					   </div>
+					</div>
 	  			</div>
 	  		</div>
 	  	</section>
 	  	<!-- About Us paragraph -->
 	  	<div class="container">
 	  		<p class="about-vdc">
-	  			<i></i>Montana’s best place for online electronics and online appliances also has a great online appliance store featuring washers, dryers, dishwashers, refrigerators and more. You’ll find french-door refrigerators, microwaves, compact refrigerators, air conditioners and more here at Vann’s online store.
+	  			<i></i><em>Founded in 1961, Vann’s has opened more than 7 electronics stores in Montana. In 1998, Vann’s launched its online store. Vann's has seen great success over the years and added an online store to the website as early as possible. Vanns.com is an award winning website with a broad offering of consumer electronics.</em>
 	  		</p>
 	  	</div>
   	</div>
@@ -346,8 +396,28 @@
 	<!-- Libraries -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     
-	<!-- Global scripts concatenated and minified via Codekit-->
-	<script src="assets/js/plugins-min.js"></script>
+	<!-- Global scripts/options concatenated and minified via Codekit-->
+	<script src="assets/js/global/plugins-min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				// tooltip options (Specials btn)
+		        $('.header').tooltip({
+		          selector: "a[rel=tooltip]",
+		          placement: "bottom"
+		        })
+		        // innerfade options (trust points)
+				$('#trust-header').innerfade({
+					animationtype: 'slide',
+					speed: 1,
+					timeout: 10000,
+					type: 'sequence',
+					containerheight: '36px'
+				});
+			}
+		);
+	</script>
 
 	<!-- Google Analytics -->
 	<script>
@@ -365,23 +435,15 @@
 	<![endif]-->
 	
 	<!-- Page specific scripts/options -->
+	<script src="assets/js/areas/home-min.js"></script>
+	
 	<script type="text/javascript">
-	$(document).ready(
-		function(){
-			// tooltip demo
-	        $('.header').tooltip({
-	          selector: "a[rel=tooltip]",
-	          placement: "bottom"
-	        })
-			$('#trust-header').innerfade({
-				animationtype: 'slide',
-				speed: 1,
-				timeout: 10000,
-				type: 'sequence',
-				containerheight: '36px'
-			});
-		}
-	);
-</script>
+		$(document).ready(
+			function(){
+				// Scrollable options (Featured brands)
+		        $("#brand-scroller").scrollable({circular: true}).autoscroll({ autoplay: true, interval: 7000 });
+			}
+		);
+	</script>
   </body>
 </html>

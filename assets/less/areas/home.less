@@ -11,12 +11,14 @@
 // --------------------------------------------------
 
 // Hero
+// -------------------------
 .home .hero {
 	margin-bottom: 30px;
 	height: 535px;
 }
 
 // Trust points
+// -------------------------
 .trust {
 	font-family: @serifStack;
 	text-transform: uppercase;
@@ -62,14 +64,116 @@
 // SHOP SECTION
 // --------------------------------------------------
 
-// Deal of the Day Widget
+// Deal of the Day
+// -------------------------
 .dod {
 	height: 200px;
 	background: @white;
 	.border-radius(3px);
+	h3 {
+		font-size: 18px;
+		line-height: 18px;
+		color: #4d4d4d;
+		border-bottom: 1px solid @topbarColor;
+		text-shadow: 0 1px 0 @white;
+		#gradient > .vertical(@white, #f5f5f5);
+		padding: 8px 20px 8px 45px;
+		.border-radius-custom(3px, 3px, 0, 0);
+		.clearfix();
+		position: relative;
+		&:before {
+			content: url(../../img/home/dod-icon.png);
+			position: absolute;
+			left: 20px;
+			top: 5px;
+		}
+		span {
+			font-size: 13px;
+			line-height: 18px;
+			font-weight: normal;
+			float: right;
+			color: @grayLight;
+		}
+	}
+	.dod-item {
+		padding: 15px;
+		border-bottom: 1px solid @topbarColor;
+		h5 {
+			text-transform: uppercase;
+			padding-top: 5px;
+			margin-bottom: 0;
+			line-height: 13px;
+		}
+		span {
+			text-transform: uppercase;
+			font-size: 11px;
+			color: @grayLight;
+		}
+		p {
+			font-size: 12px;
+			margin-top: 3px;
+		}
+		img {
+			float: left;
+			margin-right: 20px;
+		}
+	}
+	.stats-container {
+		background-color: #fafafa;
+		height: 49px;
+		border-bottom: 1px solid @white;
+		.clearfix();
+		.border-radius-custom(0,0,3px,3px);
+		> ul {
+			margin-left: 0;
+			text-shadow: 0 1px 0 @white;
+			> li {
+				float: left;
+				list-style: none;
+				border-right: 1px solid @topbarColor;
+				text-transform: uppercase;
+				font-size: 11px;
+				color: @grayLight;
+				padding: 7px 10px;
+				&:first-child {
+					padding-left: 15px;
+				}
+				&:last-child {
+					border-right: 0;
+					text-align: right;
+					float: right;
+					padding-right: 15px;
+					strong {
+						color: @green;
+					}
+				}
+				strong {
+					display: block;
+					font-size: 18px;
+					color: @grayDark;
+					margin-bottom: 2px;
+				}
+				.btn {
+					float: right;
+					//font-weight: 500;
+					margin-left: 15px;
+					text-align: left;
+					text-transform: none;
+					font-size: 13px;
+					text-shadow: none;
+					margin-top: 3px;
+				}
+				.primary {
+					font-size: 16px;
+					line-height: 16px;
+				}
+			}
+		}
+	}
 }
 
-// Secondary Zones
+// Secondary zones
+// -------------------------
 .zone.secondary {
 	height: 200px;
 }
@@ -82,6 +186,7 @@
 }
 
 // Search Brands
+// -------------------------
 #search-brands {
 	padding: 11px 10px 9px;
 	width: 278px;
@@ -111,12 +216,55 @@
 }
 
 // Featured Brands
+// -------------------------
+
 .featured-brands {
 	height: 50px;
 	background: #f9f9f9;
 	border: 1px solid @topbarColor;
 	.border-radius(3px);
 	width: 618px;
+}
+
+// Brand Scroller
+// root element for the scrollable. when scrolling occurs this element stays still.
+#brand-scroller {
+	/* required settings */
+	position: relative;
+	overflow: hidden;
+	width: 618px;
+	height: 50px;
+	display: block;
+	// root element for scrollable items. Must be absolutely positioned and it should have an extremely large width to accommodate scrollable items. it's enough that you set width and height for the root element and not for this element.
+	.items {
+		// this cannot be too large
+		width: 20000em;
+		position: absolute;
+		// a single item. must be floated in horizontal scrolling. typically, this element is the one that *you* will style the most.
+		div {
+			float: left;
+			a {
+				background-image: url(../../img/featured-brands-sprite.png);
+				width: 103px;
+				height: 50px;
+				text-indent: -9999px;
+				float: left;
+				// Brand sprites
+				&.apple{ background-position: 0 0;} 
+				&.denon{ background-position: 0 -100px;} 
+				&.klipsch{ background-position: 0 -200px;} 
+				&.lg{ background-position: 0 -300px;} 
+				&.maytag{ background-position: 0 -400px;} 
+				&.mcintosh{ background-position: 0 -500px;} 
+				&.nintendo{ background-position: 0 -600px;} 
+				&.onkyo{ background-position: 0 -700px;} 
+				&.panasonic{ background-position: 0 -800px;} 
+				&.samsung{ background-position: 0 -900px;} 
+				&.sony{ background-position: 0 -1000px;} 
+				&.yamaha{ background-position: 0 -1100px;} 
+			}
+		}
+	}
 }
 
 // SEO BLOCK
@@ -126,7 +274,7 @@
 	color: #b3b3b3;
 	//background-color: #eaeaea;
 	//.border-radius(3px);
-	//padding: 10px 20px;
+	padding: 0 20px;
 	//border-bottom: 1px solid @white;
 	//.box-shadow(inset 0 1px 4px rgba(0,0,0,0.1);
 	margin-bottom: 40px;
