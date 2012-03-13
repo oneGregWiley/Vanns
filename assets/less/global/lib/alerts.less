@@ -6,51 +6,52 @@
   padding: 8px 35px 8px 14px;
   margin-bottom: @baseLineHeight;
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  background-color: #fcf3e3;
-  border: 1px solid #f2e5d0;
+  background-color: @warningBackground;
+  border: 1px solid @warningBorder;
   .border-radius(4px);
 }
 .alert,
 .alert-heading {
-  color: #bf8952;
+  color: @warningText;
 }
 
 // Adjust close link position
 .alert .close {
-  *margin-top: 3px; /* IE7 spacing */
   position: relative;
+  top: -2px;
   right: -21px;
+  line-height: 18px;
 }
 
 // Alternate styles
 // ----------------
 
 .alert-success {
-  background-color: #d8f0da;
-  border-color: #c3e8c7;  
+  background-color: @successBackground;
+  border-color: @successBorder;  
 }
 .alert-success,
 .alert-success .alert-heading {
-  color: #45875b;
+  color: @successText;
 }
 .alert-danger,
 .alert-error {
-  background-color: #f2e0df;
-  border-color: #e8c7c5;
+  background-color: @errorBackground;
+  border-color: @errorBorder;
 }
 .alert-danger,
 .alert-error,
 .alert-danger .alert-heading,
 .alert-error .alert-heading {
-  color: #ba5249;
+  color: @errorText;
 }
 .alert-info {
-  background-color: #daebf7;
-  border-color: #bfdef2;
+  background-color: @infoBackground;
+  border-color: @infoBorder;
 }
 .alert-info,
 .alert-info .alert-heading {
-  color: #3b80ad;
+  color: @infoText;
 }
 
 

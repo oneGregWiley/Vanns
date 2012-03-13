@@ -62,12 +62,12 @@ header {
 	// Chat link
 	.chat-link {
 		i {background-position: 0 -464px;}
-		&:hover i {background-position: 0 -394px;}
+		&:hover .icon-chat {background-position: 0 -394px;}
 	}
 	// Help link
 	.help-link {
 		i {background-position: 0 -604px;}
-		&:hover i {	background-position: 0 -534px;}
+		&:hover .icon-help {	background-position: 0 -534px;}
 	}
 
 	// Utilities area
@@ -102,7 +102,8 @@ header {
 			text-align: center;
 			color: @white;
 			text-shadow: none;
-			padding-top: 3px;
+			padding-top: 1px;
+			padding-bottom: 2px;
 			position: relative;
 			// Cart QTY carat
 			&:before {
@@ -186,6 +187,7 @@ header {
 			background-position: 0 -72px;
 			width: 22px;
 			height: 22px;
+			border: 0;
 			position: absolute;
 			right: 6px;
 			top: 6px;
