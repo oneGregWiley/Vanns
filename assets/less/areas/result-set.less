@@ -1,0 +1,105 @@
+// result-set.less
+// CSS for the result set.
+// -----------------------------------------------------------------
+
+
+// Include LESS variables & mixins
+@import "../global/lib/mixins.less";
+@import "../global/lib/variables.less";
+
+// Page Header (Result Set specific)
+// -------------------------
+.result-set .page-header {
+	margin: 0 0 20px 20px;
+	padding: 0;
+	border: 0;
+	line-height: 24px;
+}
+
+// Text ad
+// -------------------------
+.text-ad {
+	a {
+		color: #78ab7d;
+		border-bottom: 1px solid #78ab7d;
+		line-height: 36px;
+		margin-right: 17px;
+		&:hover {
+			color: #628c66;
+			text-decoration: none;
+			border-bottom: 1px solid #628c66;
+		}
+		&:after {
+			content: url('../../img/text-ad-arrow.png');
+			position: absolute;
+			margin-left: 10px;
+			margin-top: 2px;
+		}
+	}
+	text-align: right;
+}
+
+// REFINEMENTS
+// --------------------------------------------------
+
+// Refinements Bar
+// -------------------------
+
+/* Bar Container */
+.refinements-bar {
+  width: 100%;
+  height: 75px;
+  background-color: @white; /* Old browsers */
+  border: 1px solid @borderColor;
+  .border-radius(3px);
+  // Labels
+  .label {
+  	color: #999;
+  	background-color: transparent;
+  	font-size: 11px;
+  	margin-right: 15px;
+  }
+  // Qty
+  .results-qty {
+  	color: @white;
+  	background-color: @grayDark;
+  	font-size: 36px;
+  	text-align: center;
+  	height: 55px;
+  	padding: 10px 15px;
+  	display:inline-block;
+  	font-family: @heavyCondensed;
+  	span {
+  		font-size: 12px;
+  		text-transform: uppercase;
+  		display: block;
+  	}
+  }
+}
+
+/* Fixed refinements on scroll, but only for 980px and up (sorry IE!) */
+@media (min-width: 980px) {
+  .refinements-bar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    border: 0;
+    border-width: 0 0 1px; /* drop the border on the fixed edges */
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.3);
+       -moz-box-shadow: 0 1px 8px rgba(0,0,0,.3);
+            box-shadow: 0 1px 8px rgba(0,0,0,.3);
+    .refinements {
+		width: 938px;
+		margin: 0 auto;
+		padding: 0 1px;
+		border-left: 1px solid #e5e5e5;
+		border-right: 1px solid #e5e5e5;
+		.clearfix();
+	}
+  }
+}
