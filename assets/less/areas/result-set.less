@@ -59,20 +59,45 @@
   	font-size: 11px;
   	margin-right: 15px;
   }
+  // Back btn
+  .back-btn {
+  	float: left;
+  	padding: 0 15px;
+  	font-family: @boldCondensed;
+  	text-align: center;
+  	// Back Arrow
+  	span {
+  		height: 50px;
+  		width: 24px;
+  		display: block;
+  		background-image: url(../../img/refinement-back-arrow.png);
+  		background-repeat: no-repeat;
+  		background-position: center center;
+  		text-indent: -9999px;
+  	}
+  }
   // Qty
   .results-qty {
   	color: @white;
   	background-color: @grayDark;
-  	font-size: 36px;
+  	font-size: 12px;
   	text-align: center;
-  	height: 55px;
-  	padding: 10px 15px;
-  	display:inline-block;
-  	font-family: @heavyCondensed;
+  	height: 75px;
+  	padding: 0 15px;
+	float:left;
+  	font-family: @boldCondensed;
+  	text-transform: uppercase;
+  	// Big fatty number
   	span {
-  		font-size: 12px;
-  		text-transform: uppercase;
+  		height: 50px;
+  		font-size: 36px;
+  		line-height: 50px;
   		display: block;
+  	}
+  }
+  .filters {
+  	li {
+  		float: left;
   	}
   }
 }
