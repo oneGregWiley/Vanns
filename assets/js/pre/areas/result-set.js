@@ -1,4 +1,4 @@
-// fix sub nav on scroll
+// Sticky refinement bar
 var $win = $(window)
   , $refinementsBar = $('.refinements-bar')
   , refinementsBarTop = $('.refinements-bar').length && $('.refinements-bar').offset().top - 0
@@ -18,3 +18,9 @@ function processScroll() {
     $refinementsBar.removeClass('refinements-bar-fixed')
   }
 }
+
+// jQuery UI Core
+//@codekit-append "../plugins/jQueryUI-core.js";
+
+// Slider
+//@codekit-append "../plugins/slider.js";

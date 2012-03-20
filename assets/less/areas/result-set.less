@@ -30,7 +30,7 @@
 			border-bottom: 1px solid #628c66;
 		}
 		&:after {
-			content: url('../../img/text-ad-arrow.png');
+			content: url('../../img/global/text-ad-arrow.png');
 			position: absolute;
 			margin-left: 10px;
 			margin-top: 2px;
@@ -42,7 +42,13 @@
 // REFINEMENTS
 // --------------------------------------------------
 
-// Refinements Bar
+// Keep the next element in line from 'jumping up' when the refinements bar goes position:fixed
+.refinements-placeholder {
+	height: 75px;
+	margin-bottom: 30px;
+}
+
+// Refinements Bar (CONTAINED)
 // -------------------------
 
 /* Bar Container */
@@ -51,29 +57,50 @@
   height: 75px;
   background-color: @white; /* Old browsers */
   border: 1px solid @borderColor;
+  position: relative;
   .border-radius(3px);
+}
+
+/* Refinements */
+.refinements {
+	
   // Labels
   .label {
   	color: #999;
   	background-color: transparent;
   	font-size: 11px;
+  	line-height: 11px;
+  	display: inline-block;
+  	margin-top: 15px;
+  	padding: 0;
+  	.clearfix();
+  }
+  .pull-right .label {
   	margin-right: 15px;
+  	float: left;
   }
   // Back btn
   .back-btn {
   	float: left;
   	padding: 0 15px;
+  	height: 75px;
   	font-family: @boldCondensed;
   	text-align: center;
+  	.border-radius(3px);
   	// Back Arrow
   	span {
-  		height: 50px;
+  		height: 35px;
   		width: 24px;
+  		margin-top:15px;
   		display: block;
-  		background-image: url(../../img/refinement-back-arrow.png);
-  		background-repeat: no-repeat;
-  		background-position: center center;
+  		background: url(../../img/result-set/refinements-back-arrow.png) -26px 0px no-repeat;
   		text-indent: -9999px;
+  	}
+  	&:hover {
+		background-color: #fafafa;
+  		span {
+			background: url(../../img/result-set/refinements-back-arrow.png) 0px 0px no-repeat;
+		}
   	}
   }
   // Qty
@@ -95,36 +122,242 @@
   		display: block;
   	}
   }
-  .filters {
-  	li {
-  		float: left;
-  	}
-  }
 }
 
-/* Fixed refinements on scroll, but only for 980px and up (sorry IE!) */
+/* Price Range Slider (jquery UI) */
+// range container
+.price-range {
+	float: left;
+	margin-left: 30px;
+	.label {
+		margin-top: 15px;
+ 	}
+ 	// Values
+	#amount {
+	 	font-size: @baseFontSize;
+		line-height: 11px;
+		font-weight: bold;
+		color: @linkColor;
+		vertical-align: inherit; 
+	 	span {
+	 		font-weight: normal;
+	 		color: @grayDark;
+	 		text-transform: none;
+	 	}
+	}
+	// the slider
+	.ui-slider { 
+		position: relative;
+		text-align: left;
+		height: 10px;
+		width: 160px;
+		margin-top: 10px;
+		background: #e5e5e5;
+		.border-radius(3px);
+		// slider handles
+		a { 
+			position: absolute; 
+			z-index: 2; 
+			cursor: pointer; 
+			background: red;
+			top: -.3em; 
+			margin-left: -.6em;
+			outline: none;
+			// min handle
+		  	background: url(../../img/result-set/price-range-handles.png) 0px 0px no-repeat;
+		  	display: block;
+		  	width: 17px;
+		  	height: 19px;
+		  	// max handle
+		  	&:last-child {
+		  		background-position: -19px 0px;
+		  	}
+		}
+		// the selected range
+		.ui-slider-range { 
+			position: absolute; 
+			z-index: 1; 
+			font-size: .7em; 
+			display: block; 
+			border: 0; 
+			background: #333;
+			top: 0;
+			height: 100%;
+		}
+	}
+}
+.ui-slider-range-min { left: 0; }
+.ui-slider-range-max { right: 0; }
+// Disabled range slider handles (per jquery UI)
+.ui-state-disabled { cursor: default !important; }
+
+// Refinements Filters
+// -------------------------
+
+// Filters
+ul.filters {
+	// Remove default ul margins
+	margin-bottom: 0;
+	margin-left: 0;
+	float: right;
+	// Individual filter
+	li {
+		float: left;
+		font-family: @boldCondensed;
+		text-transform: uppercase;
+		text-align: center;
+		list-style: none;
+		border-left: 1px solid #e5e5e5;
+		height: 75px;
+		&:hover {
+		background-color: #fafafa;
+  	}
+  	// add border-radius on the last filter, so background on hover doesn't bleed
+  	&:last-child {
+  		.border-radius(0 3px 3px 0);
+  	}
+  	// Checkmark
+		span {
+  		height: 50px;
+  		width: 24px;
+  		display: block;
+  		text-indent: -9999px;
+  	}
+  	a {
+  		cursor: default;
+  		padding: 0 15px;
+  		display: block;
+  		color: @grayDark;
+  		&:hover {
+  			text-decoration: none;
+  		}
+  	}
+	  }
+}
+   
+#filters {
+	.refinements-selections {  
+		position: absolute;
+		background: #fafafa;
+		top: 76px;
+		width: 980px;
+		left: -20px;
+		border: 1px solid #ccc;
+		.border-radius(3px);
+		.tab-content {
+			padding: 20px;
+			width: 940px;
+		}
+	}
+	// Hide tabs
+	.ui-tabs-hide { 
+		 
+	}
+}
+
+// Filter Selections
+// -------------------------
+
+/* Selections container */
+/*
+.refinements-menu {
+	background: #fafafa;
+	padding: 20px;
+	width: 940px;
+	position: relative;
+	left: -20px;
+	top: -1px;
+	border: 1px solid #ccc;
+	.border-radius(3px);
+}
+*/
+
+
+// Refinements (FULL WIDTH, FIXED) but only for 980px and up
+// -------------------------
+
 @media (min-width: 980px) {
   .refinements-bar-fixed {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1030;
+    z-index: @zindexFixedNavbar;
     border: 0;
     border-width: 0 0 1px; /* drop the border on the fixed edges */
-    -webkit-border-radius: 0;
-       -moz-border-radius: 0;
-            border-radius: 0;
-    -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.3);
-       -moz-box-shadow: 0 1px 8px rgba(0,0,0,.3);
-            box-shadow: 0 1px 8px rgba(0,0,0,.3);
+    padding-left: 1px;
+    .border-radius(0);
+    .box-shadow(0 1px 8px rgba(0,0,0,.3);
     .refinements {
-		width: 938px;
+		width: 940px;
 		margin: 0 auto;
 		padding: 0 1px;
 		border-left: 1px solid #e5e5e5;
 		border-right: 1px solid #e5e5e5;
+		left: 1px;
 		.clearfix();
+		.refinements-selections {  
+			position: absolute;
+			background: red;
+			top: 76px;
+			width: 100% !important;
+			left: 0 !important;
+			border: 0 !important;
+			.box-shadow(0 3px 6px rgba(0,0,0,.2);
+			.tab-content {
+				margin: 0 auto;
+			}
+		}
 	}
   }
+}
+
+
+
+
+// SORTING
+// --------------------------------------------------
+.sort {
+	margin-bottom: 20px;
+}
+
+.sort span {
+	color: @grayLight;
+	text-shadow: 0 1px 0 @white;
+	line-height: 34px;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: bold;
+	float: left;
+	margin-right: 20px;
+}
+
+.sort .btn-group {
+	float: left;
+	margin-right: 30px;
+	margin-top: 3px;
+	button {
+		font-family: @baseFontFamily;
+		font-size: 12px;
+		&.active {
+			color: @black;
+		}
+	}
+}
+
+.result-set .pagination {
+	background: @white;
+	margin: 0;
+	a {
+		border-top-color: #ccc;
+		border-bottom-color: #ccc;
+		border-left-color: #ddd;
+		border-right-color: #ddd;
+	}
+	li:first-child a {
+		border-left-color: #ccc;
+	}
+	li:last-child a {
+		border-right-color: #ccc;
+	}
 }

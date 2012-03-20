@@ -69,7 +69,7 @@
   						<li><a href="#">Order Tracking</a></li>
   						<li id="cart" class="full"><a href="#"><i></i><strong>2</strong></a></li>
   						<li class="acct-avatar dropdown" id="menu-acct">
-  							<a class="dropdown-toggle" data-toggle="dropdown" href="#menu-acct"><img src="assets/img/topbar-acct-avatar.png">John</a>
+  							<a class="dropdown-toggle" data-toggle="dropdown" href="#menu-acct"><img src="assets/img/topbar/topbar-acct-avatar.png">John</a>
 						    <ul class="dropdown-menu">
 						      <li><a href="#">Account settings</a></li>
 						      <li><a href="#">Returns</a></li>
@@ -88,7 +88,7 @@
   				<div class="row">
   					<!-- LOGO -->
 	  				<a href="/" class="logo span3">
-		  				<img src="assets/img/header-logo.png" alt="Vanns.com" title="Vanns.com" width="210" height="45">
+		  				<img src="assets/img/header/header-logo.png" alt="Vanns.com" title="Vanns.com" width="210" height="45">
 		  			</a>
 		  			<!-- SEARCH -->
 		  			<form id="search" class="span6">
@@ -148,57 +148,83 @@
   			</div>
   		</div>
   		<!-- ======  REFINEMENTS  ====== -->
-  		<div class="container" style="height: 75px;margin-bottom: 30px;">
+  		<div class="container refinements-placeholder">
   			<div class="refinements-bar">
   				<div class="refinements">
   					<div class="pull-left">
   						<a href="#" class="back-btn"><span>Back to</span>HDTV</a>
 	  					<div class="results-qty"><span>43</span>results</div>
-	  					<span class="label">Price Range:</span>
+	  					<div class="price-range">
+	  						<span class="label">Price Range: &nbsp;&nbsp;<span id="amount"></span></span>
+							<div id="price-range"></div>
+	  					</div>
   					</div>
-  					<div class="pull-right">
+  					<div id="filters" class="pull-right">
   						<span class="label">Filter by:</span>
   						<ul class="filters">
-  							<li>Color</li>
-  							<li>In stock</li>
-  							<li>Features</li>
-  							<li>Brand</li>
-  							<li>Size</li>
+  							<li><a href="#color" data-toggle="tab"><span></span>Color</a></li>
+  							<li><a href="#stock" data-toggle="tab"><span></span>In stock</a></li>
+  							<li><a href="#features" data-toggle="tab"><span></span>Features</a></li>
+  							<li><a href="#brand" data-toggle="tab"><span></span>Brand</a></li>
+  							<li><a href="#messages" data-toggle="tab"><span></span>Size</a></li>
   						</ul>
-  					</div>
+  						<!-- Selections Container -->
+  						<!--<div class="refinements-selections"> -->
+  							<!-- Menu Panels -->
+
+							<!--
+							<div class="tab-content">
+							  <div class="tab-pane active" id="color">Panel One</div>
+							  <div class="tab-pane" id="stock">Panel Two</div>
+							  <div class="tab-pane" id="features">Panel Three</div>
+							</div>
+							-->
+
+  						</div>
+   					</div>
+  					<div class="clear"></div>
   				</div>
 	  		</div>
   		</div>
-  		
+  		<!-- Result Set Sorting -->
   		<div class="container">
-  			<div class="row">
+  			<div class="sort row">
   				<div class="span12">
-  					<p>Nostrud ex wes anderson, voluptate mlkshk hoodie art party craft beer american apparel pop-up raw denim pour-over chillwave occaecat aesthetic. Ennui nihil shoreditch synth occupy. Freegan typewriter mixtape four loko, odio lo-fi chambray esse ea pinterest food truck shoreditch fap. Ex pour-over minim swag laborum, synth excepteur small batch tattooed irure vinyl laboris stumptown post-ironic. Keffiyeh sustainable echo park proident marfa magna. Excepteur narwhal freegan, pinterest odd future art party nesciunt mumblecore exercitation marfa id ethnic adipisicing dolor sriracha. Officia elit semiotics skateboard, swag esse cliche ex.</p>
-	
-	<p>Incididunt bespoke kale chips single-origin coffee vice. Pariatur cillum beard kogi twee. Skateboard squid umami, whatever beard tofu gluten-free biodiesel tattooed pickled vegan cliche small batch in. Tofu pork belly carles locavore. Cardigan ethical carles, chambray post-ironic minim art party quis four loko keytar pitchfork vice quinoa voluptate laborum. Organic artisan vero polaroid, semiotics ethical placeat velit. Next level consectetur fingerstache, squid helvetica ullamco raw denim eiusmod.</p>
-	
-	<p>Gluten-free nulla gentrify organic, eu ethnic quinoa magna hella tumblr keytar. Artisan lo-fi skateboard forage kale chips, twee aliqua american apparel pork belly Austin vinyl VHS sed you probably haven't heard of them proident. Nesciunt freegan pop-up sapiente. Qui banh mi reprehenderit blog et selvage mumblecore. Skateboard laborum yr nostrud eiusmod, biodiesel fingerstache. Authentic proident you probably haven't heard of them narwhal. Reprehenderit letterpress in mcsweeney's, dolore minim banh mi pour-over sunt.</p>
-	
-	<p>In skateboard non cardigan aesthetic. You probably haven't heard of them flexitarian fingerstache sunt officia. Photo booth whatever ad, wayfarers godard mcsweeney's tumblr iphone quis food truck deserunt aliqua butcher pickled. Locavore leggings craft beer, aliqua labore DIY mixtape sriracha VHS mumblecore brunch accusamus id. Reprehenderit portland aliqua qui sapiente in. Fingerstache squid viral farm-to-table selvage cillum, umami bicycle rights echo park ullamco placeat VHS minim locavore. Voluptate art party ex excepteur, brunch sartorial yr vice labore fugiat.</p>
-	
-	<p>Nisi pop-up bicycle rights occaecat pariatur, nihil ex cray ullamco eiusmod you probably haven't heard of them excepteur ea ennui nostrud. Cillum freegan DIY id in. Fugiat cardigan placeat, readymade keytar tofu whatever cosby sweater. Helvetica scenester jean shorts narwhal 3 wolf moon incididunt craft beer, farm-to-table fugiat sunt non street art officia stumptown. Mixtape authentic quinoa, ethical fixie twee cliche swag small batch street art. Fixie keytar mollit portland. Fingerstache iphone magna ea farm-to-table single-origin coffee, freegan +1 pork belly mlkshk gastropub.</p>
-	
-	<p>Etsy semiotics bicycle rights, polaroid flexitarian fingerstache marfa vegan typewriter nihil magna ex. Selvage veniam commodo direct trade truffaut. Eu cardigan quis, salvia aesthetic assumenda aute wes anderson mustache twee ea occaecat non chambray food truck. Yr ethical godard craft beer farm-to-table esse, adipisicing retro iphone nulla. Thundercats tempor ea, dreamcatcher semiotics organic odd future craft beer wolf jean shorts freegan elit fingerstache. Consectetur enim flexitarian sint bespoke next level. Raw denim cray deserunt before they sold out, anim aliquip aesthetic terry richardson.</p>
-	
-	<p>Nostrud ex wes anderson, voluptate mlkshk hoodie art party craft beer american apparel pop-up raw denim pour-over chillwave occaecat aesthetic. Ennui nihil shoreditch synth occupy. Freegan typewriter mixtape four loko, odio lo-fi chambray esse ea pinterest food truck shoreditch fap. Ex pour-over minim swag laborum, synth excepteur small batch tattooed irure vinyl laboris stumptown post-ironic. Keffiyeh sustainable echo park proident marfa magna. Excepteur narwhal freegan, pinterest odd future art party nesciunt mumblecore exercitation marfa id ethnic adipisicing dolor sriracha. Officia elit semiotics skateboard, swag esse cliche ex.</p>
-	
-	<p>Incididunt bespoke kale chips single-origin coffee vice. Pariatur cillum beard kogi twee. Skateboard squid umami, whatever beard tofu gluten-free biodiesel tattooed pickled vegan cliche small batch in. Tofu pork belly carles locavore. Cardigan ethical carles, chambray post-ironic minim art party quis four loko keytar pitchfork vice quinoa voluptate laborum. Organic artisan vero polaroid, semiotics ethical placeat velit. Next level consectetur fingerstache, squid helvetica ullamco raw denim eiusmod.</p>
-	
-	<p>Gluten-free nulla gentrify organic, eu ethnic quinoa magna hella tumblr keytar. Artisan lo-fi skateboard forage kale chips, twee aliqua american apparel pork belly Austin vinyl VHS sed you probably haven't heard of them proident. Nesciunt freegan pop-up sapiente. Qui banh mi reprehenderit blog et selvage mumblecore. Skateboard laborum yr nostrud eiusmod, biodiesel fingerstache. Authentic proident you probably haven't heard of them narwhal. Reprehenderit letterpress in mcsweeney's, dolore minim banh mi pour-over sunt.</p>
-	
-	<p>In skateboard non cardigan aesthetic. You probably haven't heard of them flexitarian fingerstache sunt officia. Photo booth whatever ad, wayfarers godard mcsweeney's tumblr iphone quis food truck deserunt aliqua butcher pickled. Locavore leggings craft beer, aliqua labore DIY mixtape sriracha VHS mumblecore brunch accusamus id. Reprehenderit portland aliqua qui sapiente in. Fingerstache squid viral farm-to-table selvage cillum, umami bicycle rights echo park ullamco placeat VHS minim locavore. Voluptate art party ex excepteur, brunch sartorial yr vice labore fugiat.</p>
-	
-	<p>Nisi pop-up bicycle rights occaecat pariatur, nihil ex cray ullamco eiusmod you probably haven't heard of them excepteur ea ennui nostrud. Cillum freegan DIY id in. Fugiat cardigan placeat, readymade keytar tofu whatever cosby sweater. Helvetica scenester jean shorts narwhal 3 wolf moon incididunt craft beer, farm-to-table fugiat sunt non street art officia stumptown. Mixtape authentic quinoa, ethical fixie twee cliche swag small batch street art. Fixie keytar mollit portland. Fingerstache iphone magna ea farm-to-table single-origin coffee, freegan +1 pork belly mlkshk gastropub.</p>
-	
-	<p>Etsy semiotics bicycle rights, polaroid flexitarian fingerstache marfa vegan typewriter nihil magna ex. Selvage veniam commodo direct trade truffaut. Eu cardigan quis, salvia aesthetic assumenda aute wes anderson mustache twee ea occaecat non chambray food truck. Yr ethical godard craft beer farm-to-table esse, adipisicing retro iphone nulla. Thundercats tempor ea, dreamcatcher semiotics organic odd future craft beer wolf jean shorts freegan elit fingerstache. Consectetur enim flexitarian sint bespoke next level. Raw denim cray deserunt before they sold out, anim aliquip aesthetic terry richardson.</p>
+  					<div class="pull-left">
+	  					<!-- Sort by -->
+	  					<span>Sort by:</span>
+	  					<!-- Add data-toggle="buttons-radio" for radio style toggling on btn-group -->
+						<div class="btn-group" data-toggle="buttons-radio">
+						  <button class="btn">Newest</button>
+						  <button class="btn">Rating</button>
+						  <button class="btn">Price</button>
+						</div>
+	  					<!-- View -->
+	  					<span>View:</span>
+	  				</div>
+	  				<div class="pull-right">
+	  					<!-- Pagination -->
+	  					<div class="pagination">
+  <ul>
+    <li><a href="#">&larr;</a></li>
+    <li class="active">
+      <a href="#">1</a>
+    </li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li class="disabled"><a href="#">…</a></li>
+    <li><a href="#">10</a></li>
+    <li><a href="#">&rarr;</a></li>
+  </ul>
+</div>
+	  				</div>
   				</div>
   			</div>
   		</div>
+  		
+  		<div style="height: 2000px;"></div>
   		
 	  	<!-- About paragraph -->
 	  	<div class="container">
@@ -309,12 +335,12 @@
   		<section class="footer-bottom">
   			<!-- AWARDS / RECOGNITION -->
   			<div class="recognition">
-  				<img src="assets/img/footer-stella.png" alt="Stella Service Award - Excellent" title="Stella Service Award - Excellent"/>
-  				<img src="assets/img/footer-bizrate.png" alt="Bizrate Circle of Excellence Award" title="Bizrate Circle of Excellence Award"/>
-  				<img src="assets/img/footer-verisign.png" alt="Verisign Secured" title="Verisign Secured"/>
-  				<img src="assets/img/footer-mcafee.png" alt="McAfee Secure" title="McAfee Secure"/>
-  				<img src="assets/img/footer-paypal.png" alt="PayPal Accepted" title="PayPal Accepted"/>
-  				<img src="assets/img/footer-bbb.png" alt="BBB Accredited" title="BBB Accredited"/>
+  				<img src="assets/img/footer/footer-stella.png" alt="Stella Service Award - Excellent" title="Stella Service Award - Excellent"/>
+  				<img src="assets/img/footer/footer-bizrate.png" alt="Bizrate Circle of Excellence Award" title="Bizrate Circle of Excellence Award"/>
+  				<img src="assets/img/footer/footer-verisign.png" alt="Verisign Secured" title="Verisign Secured"/>
+  				<img src="assets/img/footer/footer-mcafee.png" alt="McAfee Secure" title="McAfee Secure"/>
+  				<img src="assets/img/footer/footer-paypal.png" alt="PayPal Accepted" title="PayPal Accepted"/>
+  				<img src="assets/img/footer/footer-bbb.png" alt="BBB Accredited" title="BBB Accredited"/>
   			</div>
   			<!-- LEGAL -->
   			<div class="legal">
@@ -378,9 +404,25 @@
 	<script src="assets/js/areas/result-set-min.js"></script>
 	
 	<script type="text/javascript">
-		$(document).ready(
+		$(document).ready(function() {
 			
-		);
+			// Range slider (price range)
+			$( "#price-range" ).slider({
+				range: true,
+				min: 0,
+				max: 500,
+				values: [ 75, 300 ],
+				slide: function displayVals( event, ui ) {
+			      var minValue = $( "#price-range" ).slider( "values", 0 );
+			      var maxValue = $( "#price-range" ).slider( "values", 1 );
+			      $("#amount").html( "$" + minValue + " <span>to</span> $" +  maxValue); 
+				}
+			});
+			$( "#amount" ).html( "$" + $( "#price-range" ).slider( "values", 0 ) +
+				" <span>to</span> $" + $( "#price-range" ).slider( "values", 1 ) );
+			$('.filters a').tab('show');
+			
+		});
 	</script>
   </body>
 </html>
