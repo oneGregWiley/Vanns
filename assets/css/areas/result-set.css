@@ -182,11 +182,18 @@ ul.filters li {
   text-transform: uppercase;
   text-align: center;
   list-style: none;
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #ccc;
   height: 75px;
 }
-ul.filters li:hover {
+ul.filters li.active {
   background-color: #fafafa;
+  position: relative;
+  height: 75px;
+  z-index: 99999;
+  border-bottom: 1px solid #FAFAFA;
+}
+ul.filters li.active a {
+  padding-right: 15px;
 }
 ul.filters li:last-child {
   -webkit-border-radius: 0 3px 3px 0;
@@ -209,19 +216,41 @@ ul.filters li a:hover {
   text-decoration: none;
 }
 #filters .refinements-selections {
+  display: none;
   position: absolute;
+  z-index: 1000;
   background: #fafafa;
   top: 76px;
   width: 980px;
   left: -20px;
+  top: 75px;
   border: 1px solid #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 #filters .refinements-selections .tab-content {
-  padding: 20px;
+  padding: 10px 20px 20px;
   width: 940px;
+}
+#filters .refinements-selections .tab-content h3 {
+  margin-bottom: 10px;
+}
+#filters .refinements-selections .tab-content .row {
+  clear: both;
+}
+#filters .refinements-selections .tab-content .reset {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 27px;
+}
+#filters .refinements-selections .tab-content .reset i {
+  background-image: url(../../img/result-set/refinements-selections-reset.png);
+  margin-left: 5px;
 }
 /* Selections container */
 /*
@@ -259,8 +288,8 @@ ul.filters li a:hover {
     width: 940px;
     margin: 0 auto;
     padding: 0 1px;
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
     left: 1px;
     *zoom: 1;
   }
@@ -278,7 +307,8 @@ ul.filters li a:hover {
     top: 76px;
     width: 100% !important;
     left: 0 !important;
-    border: 0 !important;
+    border: 0;
+    border-top: 1px solid #ccc;
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -286,6 +316,15 @@ ul.filters li a:hover {
   .refinements-bar-fixed .refinements .refinements-selections .tab-content {
     margin: 0 auto;
   }
+}
+.refinements-selections .checkbox {
+  padding: 6px 10px 6px 25px;
+  color: #555;
+  background-color: #f2f2f2;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 .sort {
   margin-bottom: 20px;
@@ -305,12 +344,26 @@ ul.filters li a:hover {
   margin-right: 30px;
   margin-top: 3px;
 }
-.sort .btn-group button {
+.sort .btn-group .btn {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
-.sort .btn-group button.active {
+.sort .btn-group .btn.active {
   color: #000000;
+}
+.sort i {
+  width: 15px;
+  height: 15px;
+  background-image: url(../../img/result-set/result-set-view.png);
+}
+.icon-rset-grid {
+  background-position: -32px 0px;
+}
+.icon-rset-list {
+  background-position: -17px -17px;
+}
+.icon-rset-compare {
+  background-position: 0 0;
 }
 .result-set .pagination {
   background: #ffffff;
@@ -327,4 +380,122 @@ ul.filters li a:hover {
 }
 .result-set .pagination li:last-child a {
   border-right-color: #ccc;
+}
+.thumb-view .result {
+  background: #ffffff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  width: 218px;
+  margin-bottom: 20px;
+}
+.thumb-view .result .quick-view {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  -webkit-border-radius: 0 3px 0 0;
+  -moz-border-radius: 0 3px 0 0;
+  border-radius: 0 3px 0 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  -webkit-transition-duration: 200ms;
+  opacity: 0;
+}
+.thumb-view .result .quick-view i {
+  background-image: url('../../img/result-set/quick-view-icon.png');
+  width: 13px;
+  height: 14px;
+  margin-right: 5px;
+}
+.thumb-view .result:hover {
+  border-color: #ccc;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+.thumb-view .result:hover .product-thumb .quick-view {
+  opacity: 1;
+}
+.thumb-view .result .product-thumb {
+  padding: 30px 20px 20px;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+}
+.thumb-view .result .product-details {
+  padding: 20px;
+}
+.thumb-view .result .product-details h3 {
+  font-size: 16px;
+}
+.thumb-view .result .product-details h4 {
+  font-size: 11px;
+  line-height: 11px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #404040;
+}
+.thumb-view .result .product-details .price {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14px;
+}
+.thumb-view .result .product-details .rating {
+  background-image: url('../../img/result-set/ratings.png');
+  width: 64px;
+  height: 12px;
+  margin-top: 2px;
+}
+.thumb-view .result .product-details .rating .stars {
+  background-image: url('../../img/result-set/ratings.png');
+  background-position: 0 -14px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 12px;
+}
+.thumb-view .result .product-details .rating .stars.one-star {
+  width: 12px;
+}
+.thumb-view .result .product-details .rating .stars.two-stars {
+  width: 26px;
+}
+.thumb-view .result .product-details .rating .stars.three-stars {
+  width: 40px;
+}
+.thumb-view .result .product-details .rating .stars.four-stars {
+  width: 52px;
+}
+.thumb-view .result .product-details .rating .stars.five-stars {
+  width: 64px;
+}
+.badge {
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  top: 6px;
+  left: 10px;
+}
+.badge i {
+  background-image: url(../../img/result-set/result-set-badges.png);
+  background-repeat: no-repeat;
+  margin-right: 7px;
+}
+.badge.toprated i {
+  background-position: -34px 0;
+  width: 15px;
+  height: 14px;
+  position: relative;
+  top: -2px;
+}
+.badge.bestseller i {
+  background-position: 0 0;
+  width: 12px;
+  height: 18px;
+  position: relative;
+  top: -2px;
 }

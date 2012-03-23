@@ -150,7 +150,7 @@
   		<!-- ======  REFINEMENTS  ====== -->
   		<div class="container refinements-placeholder">
   			<div class="refinements-bar">
-  				<div class="refinements">
+  				<section class="refinements">
   					<div class="pull-left">
   						<a href="#" class="back-btn"><span>Back to</span>HDTV</a>
 	  					<div class="results-qty"><span>43</span>results</div>
@@ -166,27 +166,133 @@
   							<li><a href="#stock" data-toggle="tab"><span></span>In stock</a></li>
   							<li><a href="#features" data-toggle="tab"><span></span>Features</a></li>
   							<li><a href="#brand" data-toggle="tab"><span></span>Brand</a></li>
-  							<li><a href="#messages" data-toggle="tab"><span></span>Size</a></li>
+  							<li><a href="#size" data-toggle="tab"><span></span>Size</a></li>
   						</ul>
   						<!-- Selections Container -->
-  						<!--<div class="refinements-selections"> -->
+  						<div class="refinements-selections">
   							<!-- Menu Panels -->
-
-							<!--
 							<div class="tab-content">
-							  <div class="tab-pane active" id="color">Panel One</div>
-							  <div class="tab-pane" id="stock">Panel Two</div>
-							  <div class="tab-pane" id="features">Panel Three</div>
+							  <section class="tab-pane" id="color">
+							  	<h3 class="pull-left">Select a color</h3>
+							  	<a href="#" class="pull-right reset">Reset <i></i></a>
+								<div class="row">
+									<div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Red</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Yellow</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Blue</label>								      
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Brown</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Purple</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Maroon</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Aqua</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Chartreuse</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Black</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Textured</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Patterns</label>
+								    </div>
+								</div>
+							  </section>
+							  <section class="tab-pane" id="stock">
+							  	<h3 class="pull-left">In Stock</h3>
+							  	<a href="#" class="pull-right reset">Reset <i></i></a>
+								<div class="row">
+									<div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> In stock</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> On order</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Out of stock</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Pre-order</label>
+								    </div>
+								</div>
+							  </section>
+							  <section class="tab-pane" id="features">
+							  	<h3 class="pull-left">Select Features</h3>
+							  	<a href="#" class="pull-right reset">Reset <i></i></a>
+								<div class="row">
+									<div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> 1080p</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> 120Hz Refresh rate</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> 3D ready</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Built-in Web access</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> 240Hz Refresh rate</label>
+								      <label class="checkbox"><input type="checkbox" value="layouts.less"> Instant Movie Streaming</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> 720p</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Apps</label>
+								    </div>
+								</div>
+							  </section>
+							  <section class="tab-pane" id="brand">
+							  	<h3 class="pull-left">Select Brands</h3>
+							  	<a href="#" class="pull-right reset">Reset <i></i></a>
+								<div class="row">
+									<div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Sony</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Samsung</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> LG</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Panasonic</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Sharp</label>
+								    </div>
+								    <div class="span3">
+								    	<label class="checkbox"><input type="checkbox" value="layouts.less"> Toshiba</label>
+								    </div>
+								 </div>
+							  </section>
+							  <section class="tab-pane" id="size">
+							  	<h3 class="pull-left">Select your Size</h3>
+							  	<a href="#" class="pull-right reset">Reset <i></i></a>
+								<div class="row">
+									<div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> 1080p</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Wi-fi</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Blue</label>
+								      <label class="checkbox"><input type="checkbox" value="layouts.less"> Green</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Brown</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Purple</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Maroon</label>
+								      <label class="checkbox"><input type="checkbox" value="layouts.less"> Pink</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Aqua</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Chartreuse</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Black</label>
+								      <label class="checkbox"><input type="checkbox" value="layouts.less"> White</label>
+								    </div>
+								    <div class="span3">
+								      <label class="checkbox"><input type="checkbox" value="reset.less"> Textured</label>
+								      <label class="checkbox"><input type="checkbox" value="scaffolding.less"> Patterns</label>
+								      <label class="checkbox"><input type="checkbox" value="grid.less"> Periwinkle</label>
+								    </div>
+							  </section>
 							</div>
-							-->
-
   						</div>
    					</div>
   					<div class="clear"></div>
-  				</div>
+  				</section>
 	  		</div>
   		</div>
-  		<!-- Result Set Sorting -->
+  		<!-- ======  RESULT SET SORTING  ====== -->
   		<div class="container">
   			<div class="sort row">
   				<div class="span12">
@@ -201,31 +307,248 @@
 						</div>
 	  					<!-- View -->
 	  					<span>View:</span>
+	  					<!-- Add data-toggle="buttons-radio" for radio style toggling on btn-group -->
+						<div class="btn-group view" data-toggle="buttons-radio">
+						  <a href="#" class="btn active"><i class="icon-rset-grid"></i></a>
+						  <a href="#" class="btn"><i class="icon-rset-list"></i></a>
+						  <a href="#" class="btn"><i class="icon-rset-compare"></i></a>
+						</div>
 	  				</div>
 	  				<div class="pull-right">
 	  					<!-- Pagination -->
 	  					<div class="pagination">
-  <ul>
-    <li><a href="#">&larr;</a></li>
-    <li class="active">
-      <a href="#">1</a>
-    </li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li class="disabled"><a href="#">…</a></li>
-    <li><a href="#">10</a></li>
-    <li><a href="#">&rarr;</a></li>
-  </ul>
-</div>
+						  <ul>
+						    <li><a href="#">&larr;</a></li>
+						    <li class="active">
+						      <a href="#">1</a>
+						    </li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li class="disabled"><a href="#">…</a></li>
+						    <li><a href="#">10</a></li>
+						    <li><a href="#">&rarr;</a></li>
+						  </ul>
+						</div>
 	  				</div>
   				</div>
   			</div>
   		</div>
   		
-  		<div style="height: 2000px;"></div>
+  		<!-- ======  RESULTS  ====== -->
+  		<section class="results container thumb-view">
+  			<!-- ======  Thumb view  ====== -->
+  			<div class="row">
+  				<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge toprated"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price pull-left">$999.99</span>
+		  				<div class="rating pull-right"><span class="stars four-stars"></span></div>
+		  				<div class="clear"></div>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge bestseller"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge toprated"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price pull-left">$999.99</span>
+		  				<div class="rating pull-right">Stars</div>
+		  				<div class="clear"></div>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge bestseller"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		
+		  		
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge toprated"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price pull-left">$999.99</span>
+		  				<div class="rating pull-right">Stars</div>
+		  				<div class="clear"></div>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge bestseller"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		
+		  		
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge toprated"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price pull-left">$999.99</span>
+		  				<div class="rating pull-right">Stars</div>
+		  				<div class="clear"></div>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<!-- Badge (Top rated) -->
+		  				<span class="badge bestseller"><i></i>Top Rated</span>
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<a href="#"><img src="assets/img/result-set/result-set-product-thumb.jpg" /></a>
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+		  		<div class="result span3">
+		  			<div class="product-thumb">
+		  				<a class="quick-view btn"><i></i>Quick view</a>
+		  				<img src="assets/img/result-set/result-set-product-thumb.jpg" />
+		  			</div>
+		  			<div class="product-details">
+		  				<h3><a href="#">Samsung UN40D6300</a></h3>
+		  				<h4>40" 1080p LED-LCD HDTV</h4>
+		  				<span class="price">$999.99</span>
+		  			</div>
+		  		</div>
+  			</div>
+  		</section>
   		
+  		<div style="height: 2000px;"></div>
 	  	<!-- About paragraph -->
 	  	<div class="container">
 	  		<p class="about-vdc">
@@ -420,8 +743,15 @@
 			});
 			$( "#amount" ).html( "$" + $( "#price-range" ).slider( "values", 0 ) +
 				" <span>to</span> $" + $( "#price-range" ).slider( "values", 1 ) );
+			// Show/Hide Refinements Selctions (bootstrap-tabs.js)
 			$('.filters a').tab('show');
-			
+			$('.filters').hover(function() {
+				$('.refinements-selections').css('display','block');
+			});
+			$('#filters').mouseleave(function() {
+				$('.refinements-selections').hide();
+				$('.filters li').removeClass('active');
+			});
 		});
 	</script>
   </body>
