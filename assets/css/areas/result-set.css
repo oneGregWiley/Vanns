@@ -186,14 +186,15 @@ ul.filters li {
   height: 75px;
 }
 ul.filters li.active {
-  background-color: #fafafa;
+  background-color: #333;
   position: relative;
   height: 75px;
   z-index: 99999;
-  border-bottom: 1px solid #FAFAFA;
+  border-bottom: 1px solid #333;
 }
 ul.filters li.active a {
   padding-right: 15px;
+  color: #ffffff;
 }
 ul.filters li:last-child {
   -webkit-border-radius: 0 3px 3px 0;
@@ -219,12 +220,11 @@ ul.filters li a:hover {
   display: none;
   position: absolute;
   z-index: 1000;
-  background: #fafafa;
+  background: #333;
   top: 76px;
   width: 980px;
   left: -20px;
   top: 75px;
-  border: 1px solid #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -238,6 +238,7 @@ ul.filters li a:hover {
 }
 #filters .refinements-selections .tab-content h3 {
   margin-bottom: 10px;
+  color: #ffffff;
 }
 #filters .refinements-selections .tab-content .row {
   clear: both;
@@ -287,7 +288,6 @@ ul.filters li a:hover {
   .refinements-bar-fixed .refinements {
     width: 940px;
     margin: 0 auto;
-    padding: 0 1px;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
     left: 1px;
@@ -308,7 +308,6 @@ ul.filters li a:hover {
     width: 100% !important;
     left: 0 !important;
     border: 0;
-    border-top: 1px solid #ccc;
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -319,8 +318,8 @@ ul.filters li a:hover {
 }
 .refinements-selections .checkbox {
   padding: 6px 10px 6px 25px;
-  color: #555;
-  background-color: #f2f2f2;
+  color: #fafafa;
+  background-color: #222;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
