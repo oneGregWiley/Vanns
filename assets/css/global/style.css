@@ -3505,6 +3505,14 @@ div:nth-last-child(1) {
   text-transform: none;
   font-size: 12px;
 }
+.add-to-cart i {
+  background: url(../../img/global/add-to-cart-icon.png) no-repeat;
+  width: 18px;
+  height: 16px;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
+}
 header {
   position: relative;
 }
