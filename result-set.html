@@ -1085,7 +1085,7 @@
 			$( "#amount" ).html( "$" + $( "#price-range" ).slider( "values", 0 ) +
 				" <span>to</span> $" + $( "#price-range" ).slider( "values", 1 ) );
 			// Show/Hide Refinements Selctions (bootstrap-tabs.js)
-			$('.filters a').tab('show');
+			$('.filters a').tab();
 			$('.filters').hover(function() {
 				$('.refinements-selections').css('display','block');
 			});

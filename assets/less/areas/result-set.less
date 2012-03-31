@@ -217,6 +217,9 @@ ul.filters {
 		border-bottom: 1px solid #333;
 		border-left-color: #333;
 		border-right-color: #333;
+		.selected {
+			background: url('../../img/result-set/result-set-filter-active.png') -36px 0px no-repeat;
+		}
 		a {
 			padding-right: 15px;
 			color: @white;
@@ -228,10 +231,14 @@ ul.filters {
   	}
   	// Checkmark
 		span {
-  		height: 50px;
-  		width: 24px;
+  		height: 30px;
+  		width: 34px;
   		display: block;
   		text-indent: -9999px;
+  		margin: 10px auto;
+  		&.selected {
+  			background: url('../../img/result-set/result-set-filter-active.png') 0px 0px no-repeat;
+  		}
   	}
   	a {
   		cursor: default;
@@ -438,8 +445,9 @@ ul.filters {
 			font-size: 36px;
 			line-height: 34px;
 			margin-bottom: 5px;
-			font-family: 'DinPro';
+			font-family: 'poo';
 			text-transform: uppercase;
+			font-weight: normal;
 		}
 		h4 {
 			text-transform: uppercase;

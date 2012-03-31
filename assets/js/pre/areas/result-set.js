@@ -19,6 +19,17 @@ function processScroll() {
   }
 }
 
+// Filter selected (checkmark)
+function checked() {
+	var parentFilter = $(this).closest('section.tab-pane').attr('id');
+	if ($('#'+parentFilter+' input:checked').length > 0){
+		$('a[href=#'+parentFilter+'] span').addClass('selected');
+	} else {
+		$('a[href=#'+parentFilter+'] span').removeClass('selected');
+	}
+}
+$(":checkbox").click(checked);
+
 // jQuery UI Core
 //@codekit-append "../plugins/jQueryUI-core.js";
 

@@ -1609,8 +1609,6 @@ i:last-child {
 }
 .dropdown.open .dropdown-toggle {
   color: #ffffff;
-  background: #ccc;
-  background: rgba(0, 0, 0, 0.3);
 }
 .dropdown.open .dropdown-menu {
   display: block;
@@ -4099,6 +4097,13 @@ footer .social .input-small::-webkit-input-placeholder {
   font-family: 'NeueBoldCondensed';
   src: url('../../fonts/NeueBoldCondensed/NeueBoldCondensed-webfont.eot');
   src: url('../../fonts/NeueBoldCondensed/NeueBoldCondensed-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/NeueBoldCondensed/NeueBoldCondensed-webfont.woff') format('woff'), url('../../fonts/NeueBoldCondensed/NeueBoldCondensed-webfont.ttf') format('truetype'), url('../../fonts/NeueBoldCondensed/NeueBoldCondensed-webfont.svg#boldish-webfont') format('sag');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'poo';
+  src: url('../../fonts/DinPro/DinPro-webfont.eot');
+  src: url('../../fonts/DinPro/DinPro-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/DinPro/DinPro-webfont.woff') format('woff'), url('../../fonts/DinPro/DinPro-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

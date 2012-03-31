@@ -194,6 +194,9 @@ ul.filters li.active {
   border-left-color: #333;
   border-right-color: #333;
 }
+ul.filters li.active .selected {
+  background: url('../../img/result-set/result-set-filter-active.png') -36px 0px no-repeat;
+}
 ul.filters li.active a {
   padding-right: 15px;
   color: #ffffff;
@@ -204,10 +207,14 @@ ul.filters li:last-child {
   border-radius: 0 3px 3px 0;
 }
 ul.filters li span {
-  height: 50px;
-  width: 24px;
+  height: 30px;
+  width: 34px;
   display: block;
   text-indent: -9999px;
+  margin: 10px auto;
+}
+ul.filters li span.selected {
+  background: url('../../img/result-set/result-set-filter-active.png') 0px 0px no-repeat;
 }
 ul.filters li a {
   cursor: default;
@@ -415,8 +422,9 @@ ul.filters li a:hover {
   font-size: 36px;
   line-height: 34px;
   margin-bottom: 5px;
-  font-family: 'DinPro';
+  font-family: 'poo';
   text-transform: uppercase;
+  font-weight: normal;
 }
 .featured .product-details h4 {
   text-transform: uppercase;
