@@ -1,0 +1,1 @@
+$(".menubar li").click(function(){$(this).siblings().stop(!0,!0);var a=$(this).attr("class");$("#subnav").slideDown()});
