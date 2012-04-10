@@ -1,1 +1,1 @@
-$(".menubar li").click(function(){$(this).siblings().stop(!0,!0);var a=$(this).attr("class");$("#subnav").slideDown()});
+$(".menubar li").click(function(){if(!$(this).hasClass("active")){$("#subnav").is(":hidden")&&$("#subnav").slideDown(100,function(){$(".nav-marketing").fadeIn(1e3)});$(this).addClass("active")}else if($(this).hasClass("active")){$("#subnav").slideUp(100,function(){$(".nav-marketing").hide()});$(this).removeClass("active")}$(this).siblings().stop(!0,!0).removeClass("active");var a=$(this).attr("class")});

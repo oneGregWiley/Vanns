@@ -3840,6 +3840,7 @@ header {
   display: none;
   background-image: url(../../img/nav/subnav-bg.jpg);
   background-repeat: repeat;
+  top: -20px;
   position: relative;
   z-index: 1;
   -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
@@ -3848,7 +3849,6 @@ header {
 }
 #primary #subnav .container {
   padding: 40px 0 20px 0;
-  margin-top: -20px;
 }
 #primary #subnav .container h2 {
   margin-bottom: 20px;
@@ -3880,7 +3880,7 @@ header {
 #primary #subnav .nav-marketing {
   width: 200px;
   float: right;
-  text-align: center;
+  display: none;
 }
 #primary #subnav .nav-marketing .nav-messaging {
   background-color: #FFF;
