@@ -3905,6 +3905,10 @@ header {
 #primary #subnav .nav-column li {
   list-style: none;
 }
+#primary #subnav #tv,
+#primary #subnav #audio {
+  display: none;
+}
 .about-vdc {
   color: #b3b3b3;
   padding: 0 20px;
