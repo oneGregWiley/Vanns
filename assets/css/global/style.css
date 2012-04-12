@@ -3767,7 +3767,7 @@ header {
 }
 #primary .menubar li:first-child {
   border-left: 0;
-  margin-left: 3px;
+  padding-left: 3px;
 }
 #primary .menubar li:hover {
   background-color: #e9e9e9;
@@ -3779,6 +3779,9 @@ header {
   background-image: linear-gradient(top, #fafafa, #cfcfcf);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#cfcfcf', GradientType=0);
+}
+#primary .menubar li:last-child {
+  padding-right: 4px;
 }
 #primary .menubar li a {
   color: #595959;
@@ -3799,6 +3802,49 @@ header {
   height: 25px;
   margin-top: -5px;
   background-image: url(../../img/nav/nav-sprites.png);
+}
+#primary .menubar li.active {
+  border-left: solid 1px #414141;
+  border-top: solid 1px #414141;
+  border-bottom: solid 1px #414141;
+  -webkit-box-shadow: inset 0px 1px 5px 0px #000000;
+  -moz-box-shadow: inset 0px 1px 5px 0px #000000;
+  box-shadow: inset 0px 1px 5px 0px #000000;
+  background: #525252;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #525252 0%, #828282 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #525252), color-stop(100%, #828282));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #525252 0%, #828282 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #525252 0%, #828282 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #525252 0%, #828282 100%);
+  /* IE10+ */
+
+  background: linear-gradient(top, #525252 0%, #828282 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#525252', endColorstr='#828282', GradientType=0);
+  /* IE6-9 */
+
+}
+#primary .menubar li.active:first-child {
+  border-left: 0;
+}
+#primary .menubar li.active a {
+  color: #dadada;
+  text-shadow: 0px 1px 0px #000000;
+  filter: dropshadow(color=#000000, offx=0, offy=1);
+}
+#primary .menubar li.active a i {
+  background-image: url(../../img/nav/nav-active-sprites.png);
 }
 #primary .menubar .tv a i {
   background-position: 0 -825px;
@@ -3836,6 +3882,24 @@ header {
 #primary .menubar .appliances a:hover i {
   background-position: 0 0;
 }
+#primary .menubar .tv.active a i {
+  background-position: 0 -180px;
+}
+#primary .menubar .audio.active a i {
+  background-position: 0 -90px;
+}
+#primary .menubar .portable.active a i {
+  background-position: 0 -225px;
+}
+#primary .menubar .computers.active a i {
+  background-position: 0 -45px;
+}
+#primary .menubar .cameras.active a i {
+  background-position: 0 -135px;
+}
+#primary .menubar .appliances.active a i {
+  background-position: 0 0;
+}
 #primary #subnav {
   display: none;
   background-image: url(../../img/nav/subnav-bg.jpg);
@@ -3853,7 +3917,7 @@ header {
 #primary #subnav .container h2 {
   margin-bottom: 20px;
   font-weight: 900;
-  color: #353535;
+  color: #262626;
   font-size: 32px;
   text-shadow: 0px 1px 0px #5d5d5d;
   filter: dropshadow(color=#5d5d5d, offx=0, offy=1);
