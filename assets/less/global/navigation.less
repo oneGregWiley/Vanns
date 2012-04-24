@@ -19,6 +19,11 @@
 		.box-shadow(0 1px 2px rgba(0,0,0,0.1);
 		margin-bottom: 0;
 		text-align: center;
+		&.open {
+			border-bottom: 0;
+			margin-bottom: 1px;
+			.box-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+		}
 		li {
 			float: left;
 			height: 37px;
@@ -36,7 +41,7 @@
 				#gradient > .vertical(#fafafa, #cfcfcf);
 			}
 			&:last-child {
-				padding-right: 4px;
+				padding-right: 3px;
 				.border-radius(0 3px 3px 0);
 				a {
 					.border-radius(0 3px 3px 0);
@@ -77,9 +82,23 @@
 				&:first-child {
 					border-left:0;
 					.border-radius(3px 0 0 3px);
+					position: relative;
+					left: -1px;
+					//padding-left: 4px;
+					a {
+						position: relative;
+						left: 1px;
+					}
 				}
 				&:last-child {
 					.border-radius(0 3px 3px 0);
+					position: relative;
+					right: -1px;
+					//padding-left: 4px;
+					a {
+						position: relative;
+						right: 1px;
+					}
 				}
 				&+li {
 					border-left: 0;
@@ -88,54 +107,8 @@
 					color: #f2f2f2;	
 			        text-shadow: 0px 1px 1px #000000;
 			        padding-top: 9px;
-			        i {
-			        	background-image:url(../../img/nav/nav-active-sprites.png);
-			        }
 				}
 			}
-		}
-		// Nav sprites
-		.tv a {
-			i {background-position: 0 -825px;}
-			&:hover i {background-position: 0 -750px;}
-		}
-		.audio a {
-			i {background-position: 0 -525px;}
-			&:hover i {background-position: 0 -450px;}
-		}
-		.portable a {
-			i {	background-position: 0 -675px;}
-			&:hover i {background-position: 0 -600px;}
-		}
-		.computers a {
-			i {	background-position: 0 -375px;}
-			&:hover i {background-position: 0 -300px;}
-		}
-		.cameras a {
-			i {background-position: 0 -225px;}
-			&:hover i {background-position: 0 -150px;}
-		}
-		.appliances a {
-			i {background-position: 0 -75px;}
-			&:hover i {background-position: 0 0;}
-		}
-		// Active states
-		.tv.active a {
-			i {background-position: 0 -180px;}
-		}
-		.audio.active a {
-			i {background-position: 0 -90px;}		}
-		.portable.active a {
-			i {	background-position: 0 -225px;}
-		}
-		.computers.active a {
-			i {	background-position: 0 -45px;}
-		}
-		.cameras.active a {
-			i {background-position: 0 -135px;}
-		}
-		.appliances.active a {
-			i {background-position: 0 0}
 		}
 	}	
 }
@@ -145,7 +118,8 @@
 
 #submenu {
 	// initially hidden
-	display:none;
+	visibility: hidden;
+	display:block;
 	// linen bg
 	background-image:url(../../img/nav/submenu-bg.jpg);
 	background-repeat: repeat;
@@ -157,14 +131,18 @@
 	border-bottom: 2px solid @white;
 	margin-bottom: -50px;
 	color: @white;
+	.clearfix();
+	padding: 40px 0 30px 0;
+	&.open {
+		-webkit-transition-duration: 150ms;
+	}
 	a {
 		color: @white;
 	}
 	.container {
-		padding: 40px 0 20px 0;
 		position: relative;
-		// initially hidden
-		display: none;
+		display: block;
+		.clearfix();
 	}
 	// Facilitate divider (background) between links section and marketing section
 	.row {
@@ -177,7 +155,7 @@
 		font-weight: 900;
 		color: @menuInset;
 		font-size: 32px;
-		text-shadow: 0px 1px 0px rgba(255,255,255,0.12);
+		text-shadow: 0 -1px 0 rgba(0,0,0,0.6), 0px 1px 0px rgba(255,255,255,0.12);
 		text-transform: uppercase;
 	}
 	// Secondary links

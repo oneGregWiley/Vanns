@@ -1,5 +1,5 @@
 // JQUERY INNERFADE
-//@codekit-prepend "jquery.innerfade.js";
+//@codekit-prepend "../plugins/jquery.innerfade.js";
 
 // PRIMARY NAVIGATION
 //@codekit-append "navigation.js"

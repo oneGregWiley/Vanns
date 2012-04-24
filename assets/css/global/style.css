@@ -1511,6 +1511,60 @@ i:last-child {
 .icon-resize-horizontal {
   background-position: -456px -118px;
 }
+.menubar .tv a i {
+  background-position: 0 -1275px;
+}
+.menubar .tv a:hover i {
+  background-position: 0 -1200px;
+}
+.menubar .tv.active a i {
+  background-position: 0 -1125px;
+}
+.menubar .audio a i {
+  background-position: 0 -825px;
+}
+.menubar .audio a:hover i {
+  background-position: 0 -750px;
+}
+.menubar .audio.active a i {
+  background-position: 0 -675px;
+}
+.menubar .portable a i {
+  background-position: 0 -1050px;
+}
+.menubar .portable a:hover i {
+  background-position: 0 -975px;
+}
+.menubar .portable.active a i {
+  background-position: 0 -900px;
+}
+.menubar .computers a i {
+  background-position: 0 -600px;
+}
+.menubar .computers a:hover i {
+  background-position: 0 -525px;
+}
+.menubar .computers.active a i {
+  background-position: 0 -450px;
+}
+.menubar .cameras a i {
+  background-position: 0 -375px;
+}
+.menubar .cameras a:hover i {
+  background-position: 0 -300px;
+}
+.menubar .cameras.active a i {
+  background-position: 0 -225px;
+}
+.menubar .appliances a i {
+  background-position: 0 -150px;
+}
+.menubar .appliances a:hover i {
+  background-position: 0 -75px;
+}
+.menubar .appliances.active a i {
+  background-position: 0 0;
+}
 .secondary-links a i {
   background-image: url(../../img/nav/submenu-secondary-icons.png);
   height: 19px;
@@ -3779,6 +3833,13 @@ header {
   margin-bottom: 0;
   text-align: center;
 }
+#primary .menubar.open {
+  border-bottom: 0;
+  margin-bottom: 1px;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
 #primary .menubar li {
   float: left;
   height: 37px;
@@ -3809,7 +3870,7 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#cfcfcf', GradientType=0);
 }
 #primary .menubar li:last-child {
-  padding-right: 4px;
+  padding-right: 3px;
   -webkit-border-radius: 0 3px 3px 0;
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
@@ -3864,11 +3925,23 @@ header {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
+  position: relative;
+  left: -1px;
+}
+#primary .menubar li.active:first-child a {
+  position: relative;
+  left: 1px;
 }
 #primary .menubar li.active:last-child {
   -webkit-border-radius: 0 3px 3px 0;
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
+  position: relative;
+  right: -1px;
+}
+#primary .menubar li.active:last-child a {
+  position: relative;
+  right: 1px;
 }
 #primary .menubar li.active + li {
   border-left: 0;
@@ -3878,65 +3951,9 @@ header {
   text-shadow: 0px 1px 1px #000000;
   padding-top: 9px;
 }
-#primary .menubar li.active a i {
-  background-image: url(../../img/nav/nav-active-sprites.png);
-}
-#primary .menubar .tv a i {
-  background-position: 0 -825px;
-}
-#primary .menubar .tv a:hover i {
-  background-position: 0 -750px;
-}
-#primary .menubar .audio a i {
-  background-position: 0 -525px;
-}
-#primary .menubar .audio a:hover i {
-  background-position: 0 -450px;
-}
-#primary .menubar .portable a i {
-  background-position: 0 -675px;
-}
-#primary .menubar .portable a:hover i {
-  background-position: 0 -600px;
-}
-#primary .menubar .computers a i {
-  background-position: 0 -375px;
-}
-#primary .menubar .computers a:hover i {
-  background-position: 0 -300px;
-}
-#primary .menubar .cameras a i {
-  background-position: 0 -225px;
-}
-#primary .menubar .cameras a:hover i {
-  background-position: 0 -150px;
-}
-#primary .menubar .appliances a i {
-  background-position: 0 -75px;
-}
-#primary .menubar .appliances a:hover i {
-  background-position: 0 0;
-}
-#primary .menubar .tv.active a i {
-  background-position: 0 -180px;
-}
-#primary .menubar .audio.active a i {
-  background-position: 0 -90px;
-}
-#primary .menubar .portable.active a i {
-  background-position: 0 -225px;
-}
-#primary .menubar .computers.active a i {
-  background-position: 0 -45px;
-}
-#primary .menubar .cameras.active a i {
-  background-position: 0 -135px;
-}
-#primary .menubar .appliances.active a i {
-  background-position: 0 0;
-}
 #submenu {
-  display: none;
+  visibility: hidden;
+  display: block;
   background-image: url(../../img/nav/submenu-bg.jpg);
   background-repeat: repeat;
   top: -20px;
@@ -3949,14 +3966,35 @@ header {
   border-bottom: 2px solid #ffffff;
   margin-bottom: -50px;
   color: #ffffff;
+  *zoom: 1;
+  padding: 40px 0 30px 0;
+}
+#submenu:before,
+#submenu:after {
+  display: table;
+  content: "";
+}
+#submenu:after {
+  clear: both;
+}
+#submenu.open {
+  -webkit-transition-duration: 150ms;
 }
 #submenu a {
   color: #ffffff;
 }
 #submenu .container {
-  padding: 40px 0 20px 0;
   position: relative;
-  display: none;
+  display: block;
+  *zoom: 1;
+}
+#submenu .container:before,
+#submenu .container:after {
+  display: table;
+  content: "";
+}
+#submenu .container:after {
+  clear: both;
 }
 #submenu .row {
   background: url(../../img/nav/submenu-div.png) repeat-y top right;
@@ -3967,7 +4005,7 @@ header {
   font-weight: 900;
   color: #363636;
   font-size: 32px;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.12);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6), 0px 1px 0px rgba(255, 255, 255, 0.12);
   text-transform: uppercase;
 }
 #submenu .secondary-links {
