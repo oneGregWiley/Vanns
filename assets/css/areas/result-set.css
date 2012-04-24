@@ -211,14 +211,14 @@ ul.filters li span {
   width: 34px;
   display: block;
   text-indent: -9999px;
-  margin: 10px auto;
+  margin: 0 auto 10px;
 }
 ul.filters li span.selected {
   background: url('../../img/result-set/result-set-filter-active.png') 0px 0px no-repeat;
 }
 ul.filters li a {
   cursor: default;
-  padding: 0 15px;
+  padding: 10px 15px 7px;
   display: block;
   color: #333333;
 }

@@ -1,6 +1,3 @@
-// Hover Intent
-//@codekit-append "../plugins/hoverIntent.js"
-
 // Sticky refinement bar
 var $win = $(window)
   , $refinementsBar = $('.refinements-bar')

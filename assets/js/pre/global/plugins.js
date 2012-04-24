@@ -1,6 +1,9 @@
 // JQUERY INNERFADE
 //@codekit-prepend "../plugins/jquery.innerfade.js";
 
+// hoverIntent
+//@codekit-append "../plugins/hoverIntent.js"
+
 // PRIMARY NAVIGATION
 //@codekit-append "navigation.js"
 
