@@ -1,0 +1,53 @@
+// item.less
+// CSS for the item page.
+// -----------------------------------------------------------------
+
+
+// Include LESS variables & mixins
+@import "../global/lib/mixins.less";
+@import "../global/lib/variables.less";
+
+
+// Breadcrumb
+// -------------------------
+.bread-crumb {
+	font-size: 12px;
+	a {
+		color: @grayDark;
+		font-weight: bold;
+		span {
+			color: @linkColor;
+			font-size: 10px;
+		}
+	}
+	.current-item {
+		margin: 0 5px;
+	}
+	margin-bottom: 20px;
+}
+
+// Social
+// -------------------------
+
+
+// Gallery
+// -------------------------
+.gallery {
+	position: relative;
+	background-color: @white;
+	.border-radius(3px);
+	padding: 20px;
+	width: 500px;
+	.zoom {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		color: #999;
+		&:before {
+			content: url('../../img/item/zoom.png');
+			margin-right: 10px;
+			position: relative;
+			top: 5px;
+		}
+	}
+}
